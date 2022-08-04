@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+      "module": "es2015",
+      "esModuleInterop": true,
+      "target": "es2015",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "rootDir": "./src",
+      "outDir": "./dist/esm",
+      "tsBuildInfoFile": "dist/esm.tsbuildinfo",
+      "assumeChangesOnlyAffectDirectDependencies": true,
+      "skipLibCheck": true,
+      "importHelpers": true,
+      "composite": true,
+      "declarationMap": true,
+      "strict": true,
+      "strictNullChecks": false,
+      "isolatedModules": true,
+      "plugins": [
+        { "transform": "transformer-cjs-imports" }
+      ]
+    },
+    "lib": ["es2015"],
+    "include": [
+        "./src/*",
+        "./src/**/*"
+      ],
+      "exclude": [
+        "**/**.test.tsx",
+        "**/**.test.ts",
+        "**/examples/**"
+      ]
+  }
+  
