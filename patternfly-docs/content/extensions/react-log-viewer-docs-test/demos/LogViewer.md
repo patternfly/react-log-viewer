@@ -5,7 +5,7 @@ section: extensions
 source: react-demos
 ---
 
-import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
+import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer-docs-test';
 import {
 Badge,
 Button,
@@ -33,7 +33,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 ```js
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
+import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer-docs-test';
 import {
   Badge,
   Button,

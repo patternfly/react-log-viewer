@@ -5,7 +5,7 @@ section: extensions
 propComponents: [LogViewer, LogViewerSearch]
 ---
 
-import { LogViewer, LogViewerSearch, LogViewerContext } from '@patternfly/react-log-viewer';
+import { LogViewer, LogViewerSearch, LogViewerContext } from '@ausuliv/react-log-viewer-docs-test';
 import { Button, Checkbox, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
 import { data } from './realTestData.js';
 

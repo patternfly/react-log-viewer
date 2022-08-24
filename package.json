@@ -38,7 +38,6 @@
   "author": "Red Hat",
   "license": "MIT",
   "dependencies": {
-    "@patternfly/react-log-viewer": "4.69.1",
     "@patternfly/patternfly": "^4.185.1",
     "@patternfly/react-code-editor": "^4.43.16",
     "@patternfly/react-core": "^4.227.1",

@@ -1,6 +1,6 @@
 import React from 'react';
-import { data } from '@patternfly/react-log-viewer/src/LogViewer/examples/realTestData';
-import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
+import { data } from '@ausuliv/react-log-viewer-docs-test/src/LogViewer/examples/realTestData';
+import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer-docs-test';
 import { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';
 
 CustomControlLogViewer = () => {
