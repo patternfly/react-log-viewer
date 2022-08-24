@@ -30,3 +30,5 @@ lerna-debug.log
 .vscode
 # For vim
 *.swp
+
+public
