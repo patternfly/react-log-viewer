@@ -15,7 +15,7 @@ ToolbarGroup,
 ToolbarItem,
 ToolbarToggleGroup
 } from '@patternfly/react-core';
-import { data } from '../../../content/extensions/react-log-viewer-docs-test/demos/../examples/realTestData.js';
+import { data } from '@ausuliv/react-log-viewer-docs-test/src/LogViewer/examples/realTestData.js';
 import { OutlinedPlayCircleIcon } from '@patternfly/react-icons';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
