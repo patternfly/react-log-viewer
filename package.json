@@ -1,22 +1,62 @@
 {
-  "name": "react-log-viewer-docs-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@ausuliv/react-log-viewer-docs-test",
+  "version": "4.77.5",
+  "description": "Terminal renderer",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly",
+    "log-viewer"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test/issues"
+  },
+  "homepage": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test/tree/main/packages/react-log-viewer#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:develop": "pf-docs-framework start",
+    "docs:build": "pf-docs-framework build all --output public",
+    "docs:serve": "pf-docs-framework serve public --port 5000",
+    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "react",
+    "patternfly",
+    "log-viewer"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
   "devDependencies": {
     "@patternfly/documentation-framework": "^1.1.22",
+    "rimraf": "^2.6.2",
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@patternfly/react-log-viewer": "4.69.1",
     "@patternfly/patternfly": "^4.202.1",
     "@patternfly/react-code-editor": "^4.65.1",
     "@patternfly/react-core": "^4.224.1",
-    "@patternfly/react-table": "^4.93.1"
+    "@patternfly/react-table": "^4.93.1",
+    "react": "^18.2.0",
+    "@patternfly/react-core": "^4.232.4",
+    "@patternfly/react-icons": "^4.83.4",
+    "@patternfly/react-styles": "^4.82.4",
+    "memoize-one": "^5.1.0",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
   }
 }
