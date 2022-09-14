@@ -8,7 +8,7 @@ const pageData = {
   "section": "extensions",
   "source": "react",
   "slug": "/extensions/log-viewer/react",
-  "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/repos/react-log-viewer-docs-test/patternfly-docs/content/extensions/react-log-viewer-docs-test/examples/basic.md",
+  "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer-docs-test/examples/basic.md",
   "propComponents": [
     {
       "name": "LogViewer",
@@ -133,6 +133,9 @@ pageData.liveContext = {
   ToolbarContent,
   ToolbarItem,
   data
+};
+pageData.relativeImports = {
+  
 };
 pageData.examples = {
   'Basic': props => 

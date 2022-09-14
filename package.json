@@ -1,65 +1,10 @@
 {
-  "name": "@ausuliv/react-log-viewer-docs-test",
-  "version": "4.77.8",
-  "description": "Terminal renderer",
-  "main": "./src/index.ts",
-  "sideEffects": false,
-  "publishConfig": {
-    "access": "public",
-    "tag": "prerelease"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test.git"
-  },
-  "keywords": [
-    "react",
-    "patternfly",
-    "log-viewer"
-  ],
-  "author": "Red Hat",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test/issues"
-  },
-  "homepage": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test/tree/main/packages/react-log-viewer#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:develop": "pf-docs-framework start",
-    "docs:build": "pf-docs-framework build all --output public",
-    "docs:serve": "pf-docs-framework serve public --port 5000",
-    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
-    "clean": "rimraf dist"
-  },
-  "keywords": [
-    "react",
-    "patternfly",
-    "log-viewer"
-  ],
-  "author": "Red Hat",
-  "license": "MIT",
-  "dependencies": {
-    "@patternfly/patternfly": "^4.185.1",
-    "@patternfly/react-code-editor": "^4.43.16",
-    "@patternfly/react-core": "^4.227.1",
-    "@patternfly/react-icons": "^4.78.1",
-    "@patternfly/react-styles": "^4.77.1",
-    "@patternfly/react-table": "^4.71.16",
-    "memoize-one": "^5.1.0",
-    "resize-observer-polyfill": "^1.5.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
-  },
-  "devDependencies": {
-    "@patternfly/documentation-framework": "^1.1.22",
-    "rimraf": "^2.6.2",
-    "typescript": "^4.7.4",
-
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0"
-  }
+    "name": "@ausulliv/react-log-viewer-docs-test-root",
+    "private": true,
+    "version": "0.0.0",
+    "description": "This library provides the log viewer module",
+    "license": "MIT",
+    "workspaces": [
+      "packages/*"
+    ]
 }

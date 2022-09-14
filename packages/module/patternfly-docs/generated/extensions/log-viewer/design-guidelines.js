@@ -10,7 +10,10 @@ const pageData = {
   "section": "extensions",
   "source": "design-guidelines",
   "slug": "/extensions/log-viewer/design-guidelines",
-  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/repos/react-log-viewer-docs-test/patternfly-docs/content/extensions/react-log-viewer-docs-test/design-guidelines/design-guidelines.md"
+  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer-docs-test/design-guidelines/design-guidelines.md"
+};
+pageData.relativeImports = {
+  
 };
 pageData.examples = {
   

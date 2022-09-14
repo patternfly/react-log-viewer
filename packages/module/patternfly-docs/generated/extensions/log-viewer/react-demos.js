@@ -27,7 +27,7 @@ const pageData = {
   "section": "extensions",
   "source": "react-demos",
   "slug": "/extensions/log-viewer/react-demos",
-  "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/repos/react-log-viewer-docs-test/patternfly-docs/content/extensions/react-log-viewer-docs-test/demos/LogViewer.md",
+  "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer-docs-test/demos/LogViewer.md",
   "beta": true,
   "examples": [
     "With complex toolbar"
@@ -55,6 +55,9 @@ pageData.liveContext = {
   DownloadIcon,
   PlayIcon,
   EllipsisVIcon
+};
+pageData.relativeImports = {
+  
 };
 pageData.examples = {
   'With complex toolbar': props => 
