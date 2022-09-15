@@ -1,10 +1,14 @@
 {
-    "name": "@ausulliv/react-log-viewer-docs-test-root",
+    "name": "@ausuliv/react-log-viewer-root",
     "private": true,
     "version": "0.0.0",
     "description": "This library provides the log viewer module",
     "license": "MIT",
     "workspaces": [
       "packages/*"
-    ]
+    ],
+    "scripts": {
+      "build": "yarn workspace @ausuliv/react-log-viewer build",
+      "start:docs": "yarn workspace @ausuliv/react-log-viewer docs:develop"
+    }
 }

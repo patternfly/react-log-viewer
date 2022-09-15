@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './realTestData.js';
-import { LogViewer } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer } from '@ausuliv/react-log-viewer';
 
 ANSIColorLogViewer = () => {
   return (

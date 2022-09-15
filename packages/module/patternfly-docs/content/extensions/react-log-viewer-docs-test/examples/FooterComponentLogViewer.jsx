@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer, LogViewerContext } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer, LogViewerContext } from '@ausuliv/react-log-viewer';
 import { Button } from '@patternfly/react-core';
 
 FooterComponentLogViewer = () => {

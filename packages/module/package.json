@@ -1,5 +1,5 @@
 {
-  "name": "@ausuliv/react-log-viewer-docs-test",
+  "name": "@ausuliv/react-log-viewer",
   "version": "4.77.9",
   "description": "Terminal renderer",
   "main": "dist/esm/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test.git"
+    "url": "https://github.com/wise-king-sullyman/react-log-viewer.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test/issues"
+    "url": "https://github.com/wise-king-sullyman/react-log-viewer/issues"
   },
-  "homepage": "https://github.com/wise-king-sullyman/react-log-viewer-docs-test/tree/main/packages/react-log-viewer#readme",
+  "homepage": "https://github.com/wise-king-sullyman/react-log-viewer/tree/main/packages/react-log-viewer#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:develop": "pf-docs-framework start",

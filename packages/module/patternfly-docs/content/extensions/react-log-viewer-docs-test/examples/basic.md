@@ -13,7 +13,7 @@ beta: true
 propComponents: [LogViewer, LogViewerSearch]
 ---
 
-import { LogViewer, LogViewerSearch, LogViewerContext } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer, LogViewerSearch, LogViewerContext } from '@ausuliv/react-log-viewer';
 import { Button, Checkbox, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
 import { data } from './realTestData';
 

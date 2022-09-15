@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from '../examples/realTestData';
-import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer';
 import {
   Badge,
   Button,

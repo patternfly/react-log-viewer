@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer } from '@ausuliv/react-log-viewer';
 import { Banner } from '@patternfly/react-core';
 
 HeaderComponentLogViewer = () => {

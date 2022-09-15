@@ -5,7 +5,7 @@ section: extensions
 source: react-demos
 ---
 
-import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer';
 import {
 Badge,
 Button,

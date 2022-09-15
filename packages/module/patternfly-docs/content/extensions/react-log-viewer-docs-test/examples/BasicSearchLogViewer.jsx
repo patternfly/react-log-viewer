@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer-docs-test';
+import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer';
 import { Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
 
 BasicSearchLogViewer = () => {
