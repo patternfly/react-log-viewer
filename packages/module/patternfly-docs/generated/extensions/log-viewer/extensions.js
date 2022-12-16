@@ -25,9 +25,9 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 const pageData = {
   "id": "Log viewer",
   "section": "extensions",
-  "source": "react-demos",
-  "slug": "/extensions/log-viewer/react-demos",
-  "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/demos/LogViewer.md",
+  "source": "extensions",
+  "slug": "/extensions/log-viewer/extensions",
+  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/demos/LogViewer.md",
   "beta": true,
   "examples": [
     "With complex toolbar"
@@ -71,7 +71,7 @@ const Component = () => (
     {React.createElement(pageData.examples["With complex toolbar"])}
   </React.Fragment>
 );
-Component.displayName = 'ExtensionsLogViewerReactDemosDocs';
+Component.displayName = 'ExtensionsLogViewerExtensionsDocs';
 Component.pageData = pageData;
 
 export default Component;

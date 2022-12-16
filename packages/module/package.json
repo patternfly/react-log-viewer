@@ -1,68 +1,54 @@
 {
-  "name": "@ausuliv/react-log-viewer",
+  "name": "@patternfly/react-log-viewer",
   "version": "4.84.2",
   "description": "Terminal renderer",
-  "main": "dist/js/index.js",
+  "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
-  "sideEffects": false,
-  "publishConfig": {
-    "access": "public",
-    "tag": "prerelease"
+  "scripts": {
+    "build": "tsc --build --verbose ./tsconfig.json",
+    "clean": "rimraf dist",
+    "docs:develop": "pf-docs-framework start",
+    "docs:build": "pf-docs-framework build all --output public",
+    "docs:serve": "pf-docs-framework serve public --port 5001",
+    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
+    "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
+    "serve:a11y": "yarn serve coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wise-king-sullyman/react-log-viewer.git"
-  },
-  "keywords": [
-    "react",
-    "patternfly",
-    "log-viewer"
-  ],
+  "repository": "git+https://github.com/patternfly/react-log-viewer.git",
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wise-king-sullyman/react-log-viewer/issues"
+    "url": "https://github.com/patternfly/react-log-viewer/issues"
   },
-  "homepage": "https://github.com/wise-king-sullyman/react-log-viewer/tree/main/packages/react-log-viewer#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:develop": "pf-docs-framework start",
-    "docs:build": "pf-docs-framework build all --output public",
-    "docs:serve": "pf-docs-framework serve public --port 5000",
-    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
-    "clean": "rimraf dist",
-    "build": "tsc --build --verbose ./tsconfig.json"
+  "homepage": "https://github.com/patternfly/react-log-viewer#readme",
+  "release": {
+    "branches": "main"
   },
-  "keywords": [
-    "react",
-    "patternfly",
-    "log-viewer"
-  ],
-  "author": "Red Hat",
-  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@patternfly/patternfly": "^4.210.2",
-    "@patternfly/react-code-editor": "^4.76.7",
-    "@patternfly/react-core": "^4.239.0",
-    "@patternfly/react-icons": "^4.90.0",
-    "@patternfly/react-styles": "^4.89.0",
-    "@patternfly/react-table": "^4.104.7",
+    "@patternfly/react-core": "^4.264.0",
+    "@patternfly/react-icons": "^4.93.0",
+    "@patternfly/react-styles": "^4.92.0",
     "memoize-one": "^5.1.0",
     "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
+    "react": "^16.8 || ^17 || ^18",
+    "react-dom": "^16.8 || ^17 || ^18"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^1.1.22",
+    "@patternfly/documentation-framework": "^1.2.55",
+    "@patternfly/patternfly": "^4.217.1",
+    "@patternfly/react-table": "^4.111.4",
+    "@patternfly/react-code-editor": "^4.82.26",
     "rimraf": "^2.6.2",
     "typescript": "^4.7.4",
-
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0"
+    "@types/react-dom": "^17.0.0",
+    "@patternfly/patternfly-a11y": "4.3.1"
   }
 }

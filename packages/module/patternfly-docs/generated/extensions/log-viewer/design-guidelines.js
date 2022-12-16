@@ -1,16 +1,16 @@
 import React from 'react';
 import { AutoLinkHeader, Example, Link as PatternflyThemeLink } from '@patternfly/documentation-framework/components';
-import srcImport0 from '../../../content/extensions/react-log-viewer-docs-test/design-guidelines/./img/logviewer.png';
-import srcImport1 from '../../../content/extensions/react-log-viewer-docs-test/design-guidelines/./img/logviewerdark.png';
-import srcImport2 from '../../../content/extensions/react-log-viewer-docs-test/design-guidelines/./img/logviewerclear.png';
-import srcImport3 from '../../../content/extensions/react-log-viewer-docs-test/design-guidelines/./img/logviewercog.png';
-import srcImport4 from '../../../content/extensions/react-log-viewer-docs-test/design-guidelines/./img/logviewersearch.png';
+import srcImport0 from '../../../content/extensions/react-log-viewer/design-guidelines/./img/logviewer.png';
+import srcImport1 from '../../../content/extensions/react-log-viewer/design-guidelines/./img/logviewerdark.png';
+import srcImport2 from '../../../content/extensions/react-log-viewer/design-guidelines/./img/logviewerclear.png';
+import srcImport3 from '../../../content/extensions/react-log-viewer/design-guidelines/./img/logviewercog.png';
+import srcImport4 from '../../../content/extensions/react-log-viewer/design-guidelines/./img/logviewersearch.png';
 const pageData = {
   "id": "Log viewer",
   "section": "extensions",
   "source": "design-guidelines",
   "slug": "/extensions/log-viewer/design-guidelines",
-  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer-docs-test/design-guidelines/design-guidelines.md"
+  "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/design-guidelines/design-guidelines.md"
 };
 pageData.relativeImports = {
   

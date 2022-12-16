@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from '../examples/realTestData';
-import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer';
+import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
   Badge,
   Button,
@@ -20,7 +20,7 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 
-ComplexToolbarLogViewer = () => {
+const ComplexToolbarLogViewer = () => {
   const dataSources = {
     'container-1': { type: 'C', id: 'data1' },
     'container-2': { type: 'D', id: 'data2' },
@@ -72,7 +72,7 @@ ComplexToolbarLogViewer = () => {
     }
   }, [isPaused, buffer]);
 
-  const onExpandClick = event => {
+  const onExpandClick = _event => {
     const element = document.querySelector('#complex-toolbar-demo');
 
     if (!isFullScreen) {
@@ -109,7 +109,7 @@ ComplexToolbarLogViewer = () => {
     document.body.removeChild(element);
   };
 
-  const onScroll = ({ scrollOffsetToBottom, scrollDirection, scrollUpdateWasRequested }) => {
+  const onScroll = ({ scrollOffsetToBottom, _scrollDirection, scrollUpdateWasRequested }) => {
     if (!scrollUpdateWasRequested) {
       if (scrollOffsetToBottom > 0) {
         setIsPaused(true);
@@ -138,8 +138,7 @@ ComplexToolbarLogViewer = () => {
     </React.Fragment>
   );
 
-  const ControlButton = () => {
-    return (
+  const ControlButton = () => (
       <Button
         variant={isPaused ? 'plain' : 'link'}
         onClick={() => {
@@ -150,8 +149,7 @@ ComplexToolbarLogViewer = () => {
         {isPaused ? ` Resume Log` : ` Pause Log`}
       </Button>
     );
-  };
-
+    
   const leftAlignedToolbarGroup = (
     <React.Fragment>
       <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
@@ -175,7 +173,7 @@ ComplexToolbarLogViewer = () => {
           </Select>
         </ToolbarItem>
         <ToolbarItem variant="search-filter">
-          <LogViewerSearch onFocus={e => setIsPaused(true)} placeholder="Search" />
+          <LogViewerSearch onFocus={_e => setIsPaused(true)} placeholder="Search" />
         </ToolbarItem>
       </ToolbarToggleGroup>
       <ToolbarItem>
@@ -206,7 +204,7 @@ ComplexToolbarLogViewer = () => {
   );
 
   const FooterButton = () => {
-    const handleClick = e => {
+    const handleClick = _e => {
       setIsPaused(false);
     };
     return (
@@ -237,3 +235,5 @@ ComplexToolbarLogViewer = () => {
     />
   );
 };
+
+export default ComplexToolbarLogViewer;
