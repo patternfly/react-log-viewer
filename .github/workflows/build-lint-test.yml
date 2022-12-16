@@ -50,9 +50,6 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - name: Run build script
-        run: ./devSetup.sh
-        shell: bash
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -90,9 +87,6 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - name: Run build script
-        run: ./devSetup.sh
-        shell: bash
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -134,9 +128,6 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - name: Run build script
-        run: ./devSetup.sh
-        shell: bash
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
