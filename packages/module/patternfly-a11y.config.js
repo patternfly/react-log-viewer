@@ -14,7 +14,7 @@ const urls = Object.keys(fullscreenRoutes)
   .reduce((result, item) => (result.includes(item) ? result : [...result, item]), []);
 
 module.exports = {
-  prefix: 'http://localhost:5000',
+  prefix: 'http://localhost:5001',
   waitFor,
   crawl: false,
   urls: [...urls],
