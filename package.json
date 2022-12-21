@@ -48,6 +48,7 @@
     "@testing-library/user-event": "13.5.0",
     "@testing-library/jest-dom":"5.16.5",
     "jest-environment-jsdom": "^29.2.2",
+    "jest-canvas-mock": "^2.4.0",
     "serve": "^14.1.2"
   }
 }
