@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable no-prototype-builtins */
 import memoizeOne from 'memoize-one';
 import { createElement, PureComponent } from 'react';
 import { cancelTimeout, requestTimeout } from './timer';
@@ -249,6 +251,7 @@ export default function createListComponent({
         width,
         isTextWrapped,
         hasLineNumbers,
+        indexWidth,
         ansiUp
       } = this.props;
       const { isScrolling } = this.state;
@@ -301,7 +304,7 @@ export default function createListComponent({
             style: {
               height: estimatedTotalSize > height ? estimatedTotalSize : height,
               /* eslint-disable-next-line no-nested-ternary */
-              width: isTextWrapped ? (hasLineNumbers ? width - 65 : width) : 'auto',
+              width: isTextWrapped ? (hasLineNumbers ? width - indexWidth : width) : 'auto',
               pointerEvents: isScrolling ? 'none' : undefined
             }
           },
@@ -354,6 +357,7 @@ export default function createListComponent({
     // So that pure component sCU will prevent re-renders.
     // We maintain this cache, and pass a style prop rather than index,
     // So that List can clear cached styles and force item re-render if necessary.
+    // eslint-disable-next-line @typescript-eslint/ban-types
     _getItemStyle = (index: number): Object => {
       const { itemSize } = this.props;
 

@@ -13,6 +13,7 @@ export function cancelTimeout(timeoutID: TimeoutID) {
   cancelAnimationFrame(timeoutID.id);
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function requestTimeout(callback: Function, delay: number): TimeoutID {
   const start = now();
 

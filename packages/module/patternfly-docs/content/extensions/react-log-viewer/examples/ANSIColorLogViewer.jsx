@@ -1,9 +1,8 @@
 import React from 'react';
 import { data } from './realTestData.js';
-import { LogViewer } from '@ausuliv/react-log-viewer';
+import { LogViewer } from '@patternfly/react-log-viewer';
 
-ANSIColorLogViewer = () => {
-  return (
+const ANSIColorLogViewer = () => (
     <LogViewer
       hasLineNumbers={false}
       height={300}
@@ -11,4 +10,5 @@ ANSIColorLogViewer = () => {
       theme="dark"
     />
   );
-};
+
+  export default ANSIColorLogViewer;

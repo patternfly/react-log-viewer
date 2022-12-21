@@ -1,15 +1,16 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer, LogViewerSearch } from '@ausuliv/react-log-viewer';
+import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';
 
-CustomControlLogViewer = () => {
+const CustomControlLogViewer = () => {
   const [isTextWrapped, setIsTextWrapped] = React.useState(false);
-  const onActionClick = event => {
+  const onActionClick = () => {
     console.log('clicked test action button');
   };
 
-  const onPrintClick = event => {
+  const onPrintClick = () => {
     console.log('clicked console print button');
   };
 
@@ -42,3 +43,5 @@ CustomControlLogViewer = () => {
     />
   );
 };
+
+export default CustomControlLogViewer;

@@ -6,7 +6,7 @@ module.exports = (sourceMD, sourceProps) => {
   const extensionPath = path.join(__dirname, '../src');
   sourceProps(path.join(extensionPath, '/**/*.tsx'), propsIgnore);
 
-  // Parse md files 
+  // Parse md files
   const contentBase = path.join(__dirname, './content');
   sourceMD(path.join(contentBase, 'extensions/**/*.md'), 'extensions');
 
@@ -21,4 +21,4 @@ module.exports = (sourceMD, sourceProps) => {
     sourceMD(path.join(extensionPath, '../patternfly-docs/**\/demos/*.md'), 'react-demos');
     sourceMD(path.join(extensionPath, '../patternfly-docs/**\/design-guidelines/*.md'), 'design-guidelines');
   */
-}
+};

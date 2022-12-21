@@ -1,0 +1,42 @@
+name: release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  call-build-lint-test-workflow:
+    uses: ./.github/workflows/build-lint-test.yml
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [call-build-lint-test-workflow]
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - uses: actions/cache@v2
+        id: yarn-cache
+        name: Cache npm deps
+        with:
+          path: |
+           node_modules
+           **/node_modules
+           ~/.cache/Cypress
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+      - run: yarn install --frozen-lockfile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - uses: actions/cache@v2
+        id: dist
+        name: Cache dist
+        with:
+          path: |
+            packages/*/dist
+            packages/react-styles/css
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+      - name: Build dist
+        run: yarn build
+        if: steps.dist.outputs.cache-hit != 'true'
+      - name: Release to NPM
+        run: cd packages/module && npx semantic-release@19.0.5

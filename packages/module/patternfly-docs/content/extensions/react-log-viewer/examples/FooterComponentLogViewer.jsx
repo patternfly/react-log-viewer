@@ -1,12 +1,12 @@
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer, LogViewerContext } from '@ausuliv/react-log-viewer';
+import { LogViewer } from '@patternfly/react-log-viewer';
 import { Button } from '@patternfly/react-core';
 
-FooterComponentLogViewer = () => {
+const FooterComponentLogViewer = () => {
   const logViewerRef = React.useRef();
   const FooterButton = () => {
-    const handleClick = e => {
+    const handleClick = () => {
       logViewerRef.current.scrollToBottom();
     };
     return <Button onClick={handleClick}>Jump to the bottom</Button>;
@@ -23,3 +23,5 @@ FooterComponentLogViewer = () => {
     />
   );
 };
+
+export default FooterComponentLogViewer;
