@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable no-prototype-builtins */
 import memoizeOne from 'memoize-one';
 import { createElement, PureComponent } from 'react';
 import { cancelTimeout, requestTimeout } from './timer';
@@ -357,13 +355,13 @@ export default function createListComponent({
     // So that pure component sCU will prevent re-renders.
     // We maintain this cache, and pass a style prop rather than index,
     // So that List can clear cached styles and force item re-render if necessary.
-    // eslint-disable-next-line @typescript-eslint/ban-types
     _getItemStyle = (index: number): Object => {
       const { itemSize } = this.props;
 
       const itemStyleCache = this._getItemStyleCache(shouldResetStyleCacheOnItemSizeChange && itemSize);
 
       let style;
+      // eslint-disable-next-line no-prototype-builtins
       if (itemStyleCache.hasOwnProperty(index)) {
         style = itemStyleCache[index];
       } else {
@@ -438,6 +436,7 @@ export default function createListComponent({
 
       if (typeof outerRef === 'function') {
         outerRef(ref);
+      // eslint-disable-next-line no-prototype-builtins
       } else if (outerRef != null && typeof outerRef === 'object' && outerRef.hasOwnProperty('current')) {
         outerRef.current = ref;
       }

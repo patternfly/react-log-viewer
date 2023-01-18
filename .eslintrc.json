@@ -33,6 +33,9 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/consistent-type-assertions": "error",
@@ -90,7 +93,7 @@
     "radix": ["error", "as-needed"],
     "react/prop-types": 0,
     "react/display-name": 0,
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "off",
     "react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }],
     "spaced-comment": "error",
     "use-isnan": "error"

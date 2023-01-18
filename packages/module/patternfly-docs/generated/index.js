@@ -1,12 +1,12 @@
 module.exports = {
-  '/extensions/log-viewer/extensions': {
+  '/extensions/log-viewer/react-demos': {
     id: "Log viewer",
     title: "Log viewer",
     toc: [[{"text":"With complex toolbar"}]],
     examples: ["With complex toolbar"],
     section: "extensions",
-    source: "extensions",
-    Component: () => import(/* webpackChunkName: "extensions/log-viewer/extensions/index" */ './extensions/log-viewer/extensions')
+    source: "react-demos",
+    Component: () => import(/* webpackChunkName: "extensions/log-viewer/react-demos/index" */ './extensions/log-viewer/react-demos')
   },
   '/extensions/log-viewer/design-guidelines': {
     id: "Log viewer",
