@@ -211,7 +211,7 @@ export const VariableSizeList = createListComponent({
       lastMeasuredIndex: -1
     };
 
-    instance.resetAfterIndex = (index: number, shouldForceUpdate = true) => {
+    instance.resetAfterIndex = (index: number, shouldForceUpdate: boolean = true) => {
       instanceProps.lastMeasuredIndex = Math.min(instanceProps.lastMeasuredIndex, index - 1);
 
       // We could potentially optimize further by only evicting styles after this index,

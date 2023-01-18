@@ -1,11 +1,17 @@
 {
   "name": "@patternfly/react-log-viewer",
-  "version": "4.84.2",
+  "version": "4.87.97",
   "description": "Terminal renderer",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease"
+  },
   "scripts": {
-    "build": "tsc --build --verbose ./tsconfig.json",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc --build --verbose ./tsconfig.json",
+    "build:cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "clean": "rimraf dist",
     "docs:develop": "pf-docs-framework start",
     "docs:build": "pf-docs-framework build all --output public",
@@ -21,16 +27,10 @@
     "url": "https://github.com/patternfly/react-log-viewer/issues"
   },
   "homepage": "https://github.com/patternfly/react-log-viewer#readme",
-  "release": {
-    "branches": "main"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
-    "@patternfly/react-core": "^4.264.0",
-    "@patternfly/react-icons": "^4.93.0",
-    "@patternfly/react-styles": "^4.92.0",
+    "@patternfly/react-core": "^4.273.0",
+    "@patternfly/react-icons": "^4.93.3",
+    "@patternfly/react-styles": "^4.92.3",
     "memoize-one": "^5.1.0",
     "resize-observer-polyfill": "^1.5.1"
   },
