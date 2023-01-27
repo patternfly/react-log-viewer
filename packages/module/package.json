@@ -2,7 +2,7 @@
   "name": "@patternfly/react-log-viewer",
   "version": "4.87.97",
   "description": "Terminal renderer",
-  "main": "dist/main/index.js",
+  "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "publishConfig": {
     "access": "public",
