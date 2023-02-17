@@ -6,9 +6,12 @@ import { data } from '../../../content/extensions/react-log-viewer/examples/./re
 const pageData = {
   "id": "Log viewer",
   "section": "extensions",
+  "subsection": "",
   "source": "react",
+  "tabName": null,
   "slug": "/extensions/log-viewer/react",
   "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/examples/basic.md",
+  "relPath": "packages/module/patternfly-docs/content/extensions/react-log-viewer/examples/basic.md",
   "propComponents": [
     {
       "name": "LogViewer",

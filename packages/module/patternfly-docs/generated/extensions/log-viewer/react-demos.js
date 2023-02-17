@@ -25,9 +25,12 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 const pageData = {
   "id": "Log viewer",
   "section": "extensions",
+  "subsection": "",
   "source": "react-demos",
+  "tabName": null,
   "slug": "/extensions/log-viewer/react-demos",
   "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/demos/LogViewer.md",
+  "relPath": "packages/module/patternfly-docs/content/extensions/react-log-viewer/demos/LogViewer.md",
   "beta": true,
   "examples": [
     "With complex toolbar"
