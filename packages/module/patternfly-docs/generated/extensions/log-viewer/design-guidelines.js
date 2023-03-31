@@ -10,7 +10,6 @@ const pageData = {
   "section": "extensions",
   "subsection": "",
   "source": "design-guidelines",
-  "tabName": null,
   "slug": "/extensions/log-viewer/design-guidelines",
   "sourceLink": "https://github.com/patternfly/patternfly-org/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/design-guidelines/design-guidelines.md",
   "relPath": "packages/module/patternfly-docs/content/extensions/react-log-viewer/design-guidelines/design-guidelines.md"
