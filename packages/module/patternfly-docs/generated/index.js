@@ -7,6 +7,8 @@ module.exports = {
     section: "extensions",
     subsection: "",
     source: "react-demos",
+    tabName: null,
+    beta: true,
     Component: () => import(/* webpackChunkName: "extensions/log-viewer/react-demos/index" */ './extensions/log-viewer/react-demos')
   },
   '/extensions/log-viewer/design-guidelines': {
@@ -16,6 +18,7 @@ module.exports = {
     section: "extensions",
     subsection: "",
     source: "design-guidelines",
+    tabName: null,
     Component: () => import(/* webpackChunkName: "extensions/log-viewer/design-guidelines/index" */ './extensions/log-viewer/design-guidelines')
   },
   '/extensions/log-viewer/react': {
@@ -26,6 +29,8 @@ module.exports = {
     section: "extensions",
     subsection: "",
     source: "react",
+    tabName: null,
+    beta: true,
     Component: () => import(/* webpackChunkName: "extensions/log-viewer/react/index" */ './extensions/log-viewer/react')
   }
 };

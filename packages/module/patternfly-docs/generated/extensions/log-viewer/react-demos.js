@@ -27,6 +27,7 @@ const pageData = {
   "section": "extensions",
   "subsection": "",
   "source": "react-demos",
+  "tabName": null,
   "slug": "/extensions/log-viewer/react-demos",
   "sourceLink": "https://github.com/patternfly/patternfly-react/blob/main/packages/module/patternfly-docs/content/extensions/react-log-viewer/demos/LogViewer.md",
   "relPath": "packages/module/patternfly-docs/content/extensions/react-log-viewer/demos/LogViewer.md",
