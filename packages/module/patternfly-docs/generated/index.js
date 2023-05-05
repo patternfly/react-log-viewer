@@ -8,7 +8,6 @@ module.exports = {
     subsection: "",
     source: "react-demos",
     tabName: null,
-    beta: true,
     Component: () => import(/* webpackChunkName: "extensions/log-viewer/react-demos/index" */ './extensions/log-viewer/react-demos')
   },
   '/extensions/log-viewer/design-guidelines': {
@@ -30,7 +29,6 @@ module.exports = {
     subsection: "",
     source: "react",
     tabName: null,
-    beta: true,
     Component: () => import(/* webpackChunkName: "extensions/log-viewer/react/index" */ './extensions/log-viewer/react')
   }
 };

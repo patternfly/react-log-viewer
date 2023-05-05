@@ -7,7 +7,6 @@ section: extensions
 id: Log viewer
 # Tab (react | react-demos | html | html-demos | design-guidelines | accessibility)
 source: react
-beta: true
 # If you use typescript, the name of the interface to display props for
 # These are found through the sourceProps function provdided in patternfly-docs.source.js
 propComponents: [LogViewer, LogViewerSearch]

@@ -121,7 +121,6 @@ const pageData = {
       ]
     }
   ],
-  "beta": true,
   "examples": [
     "Basic",
     "With search",
