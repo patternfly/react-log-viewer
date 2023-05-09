@@ -102,6 +102,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [loading, setLoading] = useState(true);
     const [listKey, setListKey] = useState(1);
 
+    const [, setEmptyState] = useState({});
+
     /* Parse data every time it changes */
     const parsedData = React.useMemo(() => parseConsoleOutput(data), [data]);
 
@@ -113,16 +115,27 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     let resizeTimer = null as any;
 
     useEffect(() => {
+      let observer : ResizeObserver | undefined = undefined;
       if (containerRef && containerRef.current) {
         window.addEventListener('resize', callbackResize);
+        observer = new ResizeObserver((event) => {
+          setEmptyState({});
+        }); 
+        observer.observe(containerRef.current);
         setLoading(false);
         createDummyElements();
         ansiUp.resetStyles();
       }
-      return () => window.removeEventListener('resize', callbackResize);
+      return () => { 
+        window.removeEventListener('resize', callbackResize);
+        observer?.disconnect();
+      }
     }, [containerRef.current]);
 
-    const callbackResize = () => {
+    const callbackResize = (event : UIEvent) => {
+      if (event.type === 'scroll') {
+        return;
+      }
       if (!resizing) {
         setResizing(true);
       }
@@ -168,6 +181,9 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     }, [parsedData, scrollToRow]);
 
     const createDummyElements = () => {
+      if (!(containerRef && containerRef.current)) {
+        return;
+      }
       // create dummy elements
       const dummyIndex = document.createElement('span');
       dummyIndex.className = css(styles.logViewerIndex);
