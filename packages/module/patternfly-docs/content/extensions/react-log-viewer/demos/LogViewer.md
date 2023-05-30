@@ -1,6 +1,5 @@
 ---
 id: Log viewer
-beta: true
 section: extensions
 source: react-demos
 ---
