@@ -211,7 +211,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       // if the keyword is out of the window when wrapping text
       if (!isTextWrapped) {
         setTimeout(() => {
-          const element = containerRef.current.querySelector('.pf-c-log-viewer__string.pf-m-current');
+          const element = containerRef.current.querySelector('.pf-v5-c-log-viewer__string.pf-m-current');
           element && element.scrollIntoView({ block: 'nearest', inline: 'center' });
         }, 1);
       }
@@ -272,7 +272,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           )}
           {...(initialIndexWidth && {
             style: {
-              '--pf-c-log-viewer--line-number-chars': initialIndexWidth + 1
+              '--pf-v5-c-log-viewer--line-number-chars': initialIndexWidth + 1
             } as React.CSSProperties
           })}
           {...props}

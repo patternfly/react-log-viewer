@@ -35,7 +35,7 @@ const CustomControlLogViewer = () => {
               </Button>
             </ToolbarItem>
             <ToolbarItem>
-              <Checkbox label="Wrap text" aria-label="wrap text checkbox" isChecked={isTextWrapped} id="wrap-text-checkbox" onChange={setIsTextWrapped} />
+              <Checkbox label="Wrap text" aria-label="wrap text checkbox" isChecked={isTextWrapped} id="wrap-text-checkbox" onChange={(_event, value) => setIsTextWrapped(value)} />
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>

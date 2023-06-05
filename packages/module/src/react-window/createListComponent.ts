@@ -193,7 +193,7 @@ export default function createListComponent({
         const outerRef = this._outerRef as HTMLElement;
         outerRef.scrollTop = initialScrollOffset;
       }
-      const innerRef = this._outerRef.firstChild; // innerRef will be 'pf-c-log-viewer__list'
+      const innerRef = this._outerRef.firstChild; // innerRef will be 'pf-v5-c-log-viewer__list'
       ['mousedown', 'touchstart'].forEach(event => {
         innerRef.addEventListener(event, this.onTextSelectionStart.bind(this));
       });
@@ -221,7 +221,7 @@ export default function createListComponent({
       if (this._resetIsScrollingTimeoutId !== null) {
         cancelTimeout(this._resetIsScrollingTimeoutId);
       }
-      const innerRef = this._outerRef.firstChild; // innerRef will be 'pf-c-log-viewer__list'
+      const innerRef = this._outerRef.firstChild; // innerRef will be 'pf-v5-c-log-viewer__list'
       ['mousedown', 'touchstart'].forEach(event => {
         innerRef.removeEventListener(event, this.onTextSelectionStart.bind(this));
       });
