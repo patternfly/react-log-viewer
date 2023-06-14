@@ -28,25 +28,24 @@
   },
   "homepage": "https://github.com/patternfly/react-log-viewer#readme",
   "dependencies": {
-    "@patternfly/react-core": "^5.0.0-alpha.127",
-    "@patternfly/react-icons": "^5.0.0-alpha.20",
-    "@patternfly/react-styles": "^5.0.0-alpha.17",
-    "memoize-one": "^5.1.0",
-    "monaco-editor": "^0.33.0"
-
+    "@patternfly/react-core": "5.0.0-prerelease.7",
+    "@patternfly/react-icons": "5.0.0-prerelease.3",
+    "@patternfly/react-styles": "5.0.0-prerelease.2",
+    "memoize-one": "^5.1.0"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17 || ^18",
     "react-dom": "^16.8 || ^17 || ^18"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^2.0.0-alpha.50",
-    "@patternfly/patternfly": "^5.0.0-alpha.69",
-    "@patternfly/react-table": "^5.0.0-alpha.131",
+    "@patternfly/documentation-framework": "2.0.0-alpha.57",
+    "@patternfly/patternfly": "5.0.0-prerelease.6",
+    "@patternfly/react-table": "5.0.0-prerelease.7",
     "@patternfly/patternfly-a11y": "^4.3.1",
-    "@patternfly/react-code-editor": "^5.0.0-alpha.128",
+    "@patternfly/react-code-editor": "5.0.0-prerelease.7",
     "resize-observer-polyfill": "^1.5.1",
     "tslib": "^2.0.0",
-    "react-monaco-editor": "^0.51.0"
+    "react-monaco-editor": "^0.51.0",
+    "monaco-editor": "^0.34.1"
   }
 }
