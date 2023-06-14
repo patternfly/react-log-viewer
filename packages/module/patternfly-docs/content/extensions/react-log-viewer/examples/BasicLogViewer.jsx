@@ -11,7 +11,7 @@ const BasicLogViewer = () => {
       <Checkbox
         label="Dark theme"
         isChecked={isDarkTheme}
-        onChange={setIsDarkTheme}
+        onChange={(_event, value) => setIsDarkTheme(value)}
         aria-label="toggle dark theme checkbox"
         id="toggle-dark-theme"
         name="toggle-dark-theme"

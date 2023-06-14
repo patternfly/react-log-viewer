@@ -7,6 +7,10 @@ const pageData = {
   "id": "Log viewer",
   "section": "extensions",
   "subsection": "",
+  "deprecated": false,
+  "beta": false,
+  "demo": false,
+  "newImplementationLink": false,
   "source": "react",
   "tabName": null,
   "slug": "/extensions/log-viewer/react",
@@ -146,7 +150,7 @@ pageData.relativeImports = {
 };
 pageData.examples = {
   'Basic': props => 
-    <Example {...pageData} {...props} {...{"code":"import React from 'react';\nimport { data } from './realTestData';\nimport { LogViewer } from '@patternfly/react-log-viewer';\nimport { Checkbox } from '@patternfly/react-core';\n\nconst BasicLogViewer = () => {\n  const [isDarkTheme, setIsDarkTheme] = React.useState(false);\n\n  return (\n    <React.Fragment>\n      <Checkbox\n        label=\"Dark theme\"\n        isChecked={isDarkTheme}\n        onChange={setIsDarkTheme}\n        aria-label=\"toggle dark theme checkbox\"\n        id=\"toggle-dark-theme\"\n        name=\"toggle-dark-theme\"\n      />\n      <LogViewer hasLineNumbers={false} height={300} data={data.data} theme={isDarkTheme ? 'dark' : 'light'} />\n    </React.Fragment>\n  );\n};\n\nexport default BasicLogViewer;","title":"Basic","lang":"js"}}>
+    <Example {...pageData} {...props} {...{"code":"import React from 'react';\nimport { data } from './realTestData';\nimport { LogViewer } from '@patternfly/react-log-viewer';\nimport { Checkbox } from '@patternfly/react-core';\n\nconst BasicLogViewer = () => {\n  const [isDarkTheme, setIsDarkTheme] = React.useState(false);\n\n  return (\n    <React.Fragment>\n      <Checkbox\n        label=\"Dark theme\"\n        isChecked={isDarkTheme}\n        onChange={(_event, value) => setIsDarkTheme(value)}\n        aria-label=\"toggle dark theme checkbox\"\n        id=\"toggle-dark-theme\"\n        name=\"toggle-dark-theme\"\n      />\n      <LogViewer hasLineNumbers={false} height={300} data={data.data} theme={isDarkTheme ? 'dark' : 'light'} />\n    </React.Fragment>\n  );\n};\n\nexport default BasicLogViewer;","title":"Basic","lang":"js"}}>
       
     </Example>,
   'With search': props => 
@@ -154,7 +158,7 @@ pageData.examples = {
       
     </Example>,
   'With complex toolbar': props => 
-    <Example {...pageData} {...props} {...{"code":"/* eslint-disable no-console */\nimport React from 'react';\nimport { data } from './realTestData';\nimport { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';\nimport { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';\n\nconst CustomControlLogViewer = () => {\n  const [isTextWrapped, setIsTextWrapped] = React.useState(false);\n  const onActionClick = () => {\n    console.log('clicked test action button');\n  };\n\n  const onPrintClick = () => {\n    console.log('clicked console print button');\n  };\n\n  return (\n    <LogViewer\n      data={data.data}\n      isTextWrapped={isTextWrapped}\n      toolbar={\n        <Toolbar>\n          <ToolbarContent>\n            <ToolbarItem>\n              <Button onClick={onActionClick} variant=\"control\">\n                Test Action\n              </Button>\n            </ToolbarItem>\n            <ToolbarItem>\n              <LogViewerSearch placeholder=\"Search\" />\n            </ToolbarItem>\n            <ToolbarItem>\n              <Button onClick={onPrintClick} variant=\"control\">\n                Print to Console\n              </Button>\n            </ToolbarItem>\n            <ToolbarItem>\n              <Checkbox label=\"Wrap text\" aria-label=\"wrap text checkbox\" isChecked={isTextWrapped} id=\"wrap-text-checkbox\" onChange={setIsTextWrapped} />\n            </ToolbarItem>\n          </ToolbarContent>\n        </Toolbar>\n      }\n    />\n  );\n};\n\nexport default CustomControlLogViewer;","title":"With complex toolbar","lang":"js"}}>
+    <Example {...pageData} {...props} {...{"code":"/* eslint-disable no-console */\nimport React from 'react';\nimport { data } from './realTestData';\nimport { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';\nimport { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';\n\nconst CustomControlLogViewer = () => {\n  const [isTextWrapped, setIsTextWrapped] = React.useState(false);\n  const onActionClick = () => {\n    console.log('clicked test action button');\n  };\n\n  const onPrintClick = () => {\n    console.log('clicked console print button');\n  };\n\n  return (\n    <LogViewer\n      data={data.data}\n      isTextWrapped={isTextWrapped}\n      toolbar={\n        <Toolbar>\n          <ToolbarContent>\n            <ToolbarItem>\n              <Button onClick={onActionClick} variant=\"control\">\n                Test Action\n              </Button>\n            </ToolbarItem>\n            <ToolbarItem>\n              <LogViewerSearch placeholder=\"Search\" />\n            </ToolbarItem>\n            <ToolbarItem>\n              <Button onClick={onPrintClick} variant=\"control\">\n                Print to Console\n              </Button>\n            </ToolbarItem>\n            <ToolbarItem>\n              <Checkbox label=\"Wrap text\" aria-label=\"wrap text checkbox\" isChecked={isTextWrapped} id=\"wrap-text-checkbox\" onChange={(_event, value) => setIsTextWrapped(value)} />\n            </ToolbarItem>\n          </ToolbarContent>\n        </Toolbar>\n      }\n    />\n  );\n};\n\nexport default CustomControlLogViewer;","title":"With complex toolbar","lang":"js"}}>
       
     </Example>,
   'With header component': props => 

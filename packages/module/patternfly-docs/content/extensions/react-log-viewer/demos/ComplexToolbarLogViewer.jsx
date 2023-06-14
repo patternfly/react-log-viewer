@@ -2,17 +2,19 @@ import React from 'react';
 import { data } from '../examples/realTestData';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
-  Badge,
-  Button,
-  Select,
-  SelectOption,
-  Tooltip,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarToggleGroup
+	Badge,
+	Button,
+	Tooltip,
+	Toolbar,
+	ToolbarContent,
+	ToolbarGroup,
+	ToolbarItem,
+	ToolbarToggleGroup
 } from '@patternfly/react-core';
+import {
+	Select as SelectDeprecated,
+	SelectOption
+} from '@patternfly/react-core/deprecated';
 import OutlinedPlayCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-play-circle-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
@@ -154,8 +156,8 @@ const ComplexToolbarLogViewer = () => {
     <React.Fragment>
       <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
         <ToolbarItem variant="search-filter">
-          <Select
-            onToggle={isOpen => setSelectDataSourceOpen(isOpen)}
+          <SelectDeprecated
+            onToggle={(_event, isOpen) => setSelectDataSourceOpen(isOpen)}
             onSelect={(event, selection) => {
               setSelectDataSourceOpen(false);
               setSelectedDataSource(selection);
@@ -170,7 +172,7 @@ const ComplexToolbarLogViewer = () => {
             placeholderText={selectDataSourcePlaceholder}
           >
             {selectDataSourceMenu}
-          </Select>
+          </SelectDeprecated>
         </ToolbarItem>
         <ToolbarItem variant="search-filter">
           <LogViewerSearch onFocus={_e => setIsPaused(true)} placeholder="Search" />
@@ -224,8 +226,8 @@ const ComplexToolbarLogViewer = () => {
       toolbar={
         <Toolbar>
           <ToolbarContent>
-            <ToolbarGroup alignment={{ default: 'alignLeft' }}>{leftAlignedToolbarGroup}</ToolbarGroup>
-            <ToolbarGroup alignment={{ default: 'alignRight' }}>{rightAlignedToolbarGroup}</ToolbarGroup>
+            <ToolbarGroup align={{ default: 'alignLeft' }}>{leftAlignedToolbarGroup}</ToolbarGroup>
+            <ToolbarGroup align={{ default: 'alignRight' }}>{rightAlignedToolbarGroup}</ToolbarGroup>
           </ToolbarContent>
         </Toolbar>
       }

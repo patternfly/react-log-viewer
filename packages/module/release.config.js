@@ -7,7 +7,15 @@ module.exports = {
     preset: 'angular'
   },
   plugins: [
-    '@semantic-release/commit-analyzer',
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'angular',
+        releaseRules: [
+          { type: 'chore', scope: 'deps', release: 'patch' }
+        ],
+      },
+    ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/github',
     '@semantic-release/npm'
