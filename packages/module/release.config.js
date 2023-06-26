@@ -15,12 +15,13 @@ module.exports = {
         releaseRules: [
           { type: 'chore', scope: 'deps', release: 'patch' },
           { type: 'chore', scope: 'ci-release', release: 'patch' }
-        ],
-      },
+        ]
+      }
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/github',
     '@semantic-release/npm'
   ],
-  tagFormat: 'prerelease-v${version}'
+  tagFormat: 'prerelease-v${version}',
+  dryRun: true
 };
