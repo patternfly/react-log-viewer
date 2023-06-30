@@ -13,7 +13,7 @@ import {
 } from '@patternfly/react-core';
 import {
 	Select as SelectDeprecated,
-	SelectOption
+	SelectOption as SelectOptionDeprecated
 } from '@patternfly/react-core/deprecated';
 import OutlinedPlayCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-play-circle-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
@@ -122,7 +122,7 @@ const ComplexToolbarLogViewer = () => {
   };
 
   const selectDataSourceMenu = Object.entries(dataSources).map(([value, { type }]) => (
-    <SelectOption
+    <SelectOptionDeprecated
       key={value}
       value={value}
       isSelected={selectedDataSource === value}
@@ -130,7 +130,7 @@ const ComplexToolbarLogViewer = () => {
     >
       <Badge key={value}>{type}</Badge>
       {` ${value}`}
-    </SelectOption>
+    </SelectOptionDeprecated>
   ));
 
   const selectDataSourcePlaceholder = (
