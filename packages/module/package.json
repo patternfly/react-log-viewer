@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/patternfly/react-log-viewer#readme",
   "dependencies": {
-    "@patternfly/react-core": "5.0.0-prerelease.13",
-    "@patternfly/react-icons": "5.0.0-prerelease.7",
-    "@patternfly/react-styles": "5.0.0-prerelease.5",
+    "@patternfly/react-core": "^5.0.0-prerelease.13",
+    "@patternfly/react-icons": "^5.0.0-prerelease.7",
+    "@patternfly/react-styles": "^5.0.0-prerelease.5",
     "memoize-one": "^5.1.0"
   },
   "peerDependencies": {
