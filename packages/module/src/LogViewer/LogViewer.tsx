@@ -34,6 +34,8 @@ interface LogViewerProps {
   itemCount?: number;
   /** Flag indicating that log viewer is wrapping text or not */
   isTextWrapped?: boolean;
+  /** Flag indicating whether to preserve white-space characters */
+  retainWhitespace?: boolean;
   /** Component rendered in the log viewer console window header */
   header?: React.ReactNode;
   /** Component rendered in the log viewer console window footer */
@@ -88,6 +90,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     onScroll,
     innerRef,
     isTextWrapped = true,
+    retainWhitespace = false,
     initialIndexWidth,
     ...props
   }: LogViewerProps) => {
@@ -266,7 +269,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           className={css(
             styles.logViewer,
             hasLineNumbers && styles.modifiers.lineNumbers,
-            !isTextWrapped && styles.modifiers.nowrap,
+            !isTextWrapped && !retainWhitespace && styles.modifiers.nowrap,
             initialIndexWidth && styles.modifiers.lineNumberChars,
             theme === 'dark' && styles.modifiers.dark
           )}
