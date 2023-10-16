@@ -2,19 +2,18 @@ import React from 'react';
 import { data } from '../examples/realTestData';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
-	Badge,
-	Button,
-	Tooltip,
-	Toolbar,
-	ToolbarContent,
-	ToolbarGroup,
-	ToolbarItem,
-	ToolbarToggleGroup
+  Badge,
+  Button,
+  MenuToggle,
+  Select,
+  SelectOption,
+  Tooltip,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
-import {
-	Select as SelectDeprecated,
-	SelectOption as SelectOptionDeprecated
-} from '@patternfly/react-core/deprecated';
 import OutlinedPlayCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-play-circle-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
 import PauseIcon from '@patternfly/react-icons/dist/esm/icons/pause-icon';
@@ -44,7 +43,7 @@ const ComplexToolbarLogViewer = () => {
   React.useEffect(() => {
     setTimer(
       window.setInterval(() => {
-        setItemCount(itemCount => itemCount + 1);
+        setItemCount((itemCount) => itemCount + 1);
       }, 500)
     );
     return () => {
@@ -74,7 +73,7 @@ const ComplexToolbarLogViewer = () => {
     }
   }, [isPaused, buffer]);
 
-  const onExpandClick = _event => {
+  const onExpandClick = (_event) => {
     const element = document.querySelector('#complex-toolbar-demo');
 
     if (!isFullScreen) {
@@ -111,6 +110,10 @@ const ComplexToolbarLogViewer = () => {
     document.body.removeChild(element);
   };
 
+  const onToggleClick = () => {
+    setSelectDataSourceOpen(!selectDataSourceOpen);
+  };
+
   const onScroll = ({ scrollOffsetToBottom, _scrollDirection, scrollUpdateWasRequested }) => {
     if (!scrollUpdateWasRequested) {
       if (scrollOffsetToBottom > 0) {
@@ -122,7 +125,7 @@ const ComplexToolbarLogViewer = () => {
   };
 
   const selectDataSourceMenu = Object.entries(dataSources).map(([value, { type }]) => (
-    <SelectOptionDeprecated
+    <SelectOption
       key={value}
       value={value}
       isSelected={selectedDataSource === value}
@@ -130,7 +133,7 @@ const ComplexToolbarLogViewer = () => {
     >
       <Badge key={value}>{type}</Badge>
       {` ${value}`}
-    </SelectOptionDeprecated>
+    </SelectOption>
   ));
 
   const selectDataSourcePlaceholder = (
@@ -141,23 +144,30 @@ const ComplexToolbarLogViewer = () => {
   );
 
   const ControlButton = () => (
-      <Button
-        variant={isPaused ? 'plain' : 'link'}
-        onClick={() => {
-          setIsPaused(!isPaused);
-        }}
-      >
-        {isPaused ? <PlayIcon /> : <PauseIcon />}
-        {isPaused ? ` Resume Log` : ` Pause Log`}
-      </Button>
-    );
-    
+    <Button
+      variant={isPaused ? 'plain' : 'link'}
+      onClick={() => {
+        setIsPaused(!isPaused);
+      }}
+    >
+      {isPaused ? <PlayIcon /> : <PauseIcon />}
+      {isPaused ? ` Resume Log` : ` Pause Log`}
+    </Button>
+  );
+
+  const toggle = (toggleRef) => (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={selectDataSourceOpen}>
+      {selectDataSourcePlaceholder}
+    </MenuToggle>
+  );
+
   const leftAlignedToolbarGroup = (
     <React.Fragment>
       <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
         <ToolbarItem variant="search-filter">
-          <SelectDeprecated
-            onToggle={(_event, isOpen) => setSelectDataSourceOpen(isOpen)}
+          <Select
+            toggle={toggle}
+            onOpenChange={(isOpen) => setSelectDataSourceOpen(isOpen)}
             onSelect={(event, selection) => {
               setSelectDataSourceOpen(false);
               setSelectedDataSource(selection);
@@ -172,10 +182,10 @@ const ComplexToolbarLogViewer = () => {
             placeholderText={selectDataSourcePlaceholder}
           >
             {selectDataSourceMenu}
-          </SelectDeprecated>
+          </Select>
         </ToolbarItem>
         <ToolbarItem variant="search-filter">
-          <LogViewerSearch onFocus={_e => setIsPaused(true)} placeholder="Search" />
+          <LogViewerSearch onFocus={(_e) => setIsPaused(true)} placeholder="Search" />
         </ToolbarItem>
       </ToolbarToggleGroup>
       <ToolbarItem>
@@ -206,7 +216,7 @@ const ComplexToolbarLogViewer = () => {
   );
 
   const FooterButton = () => {
-    const handleClick = _e => {
+    const handleClick = (_e) => {
       setIsPaused(false);
     };
     return (
