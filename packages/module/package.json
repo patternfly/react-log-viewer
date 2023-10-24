@@ -1,12 +1,12 @@
 {
   "name": "@patternfly/react-log-viewer",
-  "version": "0.0.0",
+  "version": "6.0.0-alpha.0",
   "description": "Terminal renderer",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "alpha"
   },
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/patternfly/react-log-viewer#readme",
   "dependencies": {
-    "@patternfly/react-core": "^5.0.0",
-    "@patternfly/react-icons": "^5.0.0",
-    "@patternfly/react-styles": "^5.0.0",
+    "@patternfly/react-core": "^6.0.0-alpha.1",
+    "@patternfly/react-icons": "^6.0.0-alpha.1",
+    "@patternfly/react-styles": "^6.0.0-alpha.1",
     "memoize-one": "^5.1.0"
   },
   "peerDependencies": {
@@ -39,11 +39,11 @@
     "react-dom": "^17 || ^18"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^5.0.15",
-    "@patternfly/patternfly": "^5.0.0",
-    "@patternfly/react-table": "^5.0.0",
+    "@patternfly/documentation-framework": "^5.2.20",
+    "@patternfly/patternfly": "^6.0.0-alpha.9",
+    "@patternfly/react-table": "^6.0.0-alpha.1",
     "@patternfly/patternfly-a11y": "^4.3.1",
-    "@patternfly/react-code-editor": "^5.0.0",
+    "@patternfly/react-code-editor": "^6.0.0-alpha.1",
     "resize-observer-polyfill": "^1.5.1",
     "tslib": "^2.0.0",
     "react-monaco-editor": "^0.51.0",
