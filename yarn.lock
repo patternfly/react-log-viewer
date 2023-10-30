@@ -1602,10 +1602,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@patternfly/ast-helpers@^0.4.57":
-  version "0.4.79"
-  resolved "https://registry.npmjs.org/@patternfly/ast-helpers/-/ast-helpers-0.4.79.tgz"
-  integrity sha512-Nn2Uut7Z1nQwDr5LAf1bns6yCFQFQWwXE2I1Ucvbk6s2Gl2X/85VGvww8FVO+YiW/plLZMLBFRPJMP4fs2N8Cg==
+"@patternfly/ast-helpers@^1.2.25":
+  version "1.2.25"
+  resolved "https://registry.npmjs.org/@patternfly/ast-helpers/-/ast-helpers-1.2.25.tgz#15d38bccfc220f1279c33e05d66e866c5d7f958a"
+  integrity sha512-G9WEno3JPs89GOSEYb8+z+chxb42pbbMq3kPb+whu2yR7LfwyehFS2h4p+hYjceBVq/3hM1rhmLi6aN+v0z10A==
   dependencies:
     acorn "^8.4.1"
     acorn-class-fields "^1.0.0"
@@ -1613,10 +1613,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/documentation-framework@^5.0.15":
-  version "5.0.15"
-  resolved "https://registry.yarnpkg.com/@patternfly/documentation-framework/-/documentation-framework-5.0.15.tgz#56e6608de10a95a92787686e5db1eb3ff7c09b89"
-  integrity sha512-3r9fqPeAKY8GeJM6m7VPyPsiggxhyDbbWTo2/4T4NoNisVPpFXi0AzUaTpvJU2KcBx5pSot1mb84V3f8DHzWXg==
+"@patternfly/documentation-framework@^5.2.20":
+  version "5.2.25"
+  resolved "https://registry.npmjs.org/@patternfly/documentation-framework/-/documentation-framework-5.2.25.tgz#d9d4c502f992bca19bed2465e935d2ba30b8dcab"
+  integrity sha512-CxLrTjNZ2KplakfWEIZP4FruHbFbsLAzLgFW13cD9eqIKdeuCvGSjhgzpr3/9SUMADH5w4gFMsAJZJH2+ptVhg==
   dependencies:
     "@babel/core" "7.18.2"
     "@babel/plugin-proposal-class-properties" "7.17.12"
@@ -1626,7 +1626,7 @@
     "@babel/plugin-transform-react-jsx" "7.17.12"
     "@babel/preset-env" "7.18.2"
     "@mdx-js/util" "1.6.16"
-    "@patternfly/ast-helpers" "^0.4.57"
+    "@patternfly/ast-helpers" "^1.2.25"
     "@reach/router" "npm:@gatsbyjs/reach-router@1.3.9"
     autoprefixer "9.8.6"
     babel-loader "9.1.2"
@@ -1702,60 +1702,60 @@
     puppeteer-cluster "^0.23.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@^5.0.0":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-5.0.2.tgz#f5daf2c98ccb85e6466d42fd61d39ba3c10ed532"
-  integrity sha512-PB8+MLdYVgF1hIOxGmnVsZG+YHUX3RePe5W1oMS4gS00EmSgw1cobr1Qbpy/BqqS8/R9DRN4hZ2FKDT0d5tkFQ==
+"@patternfly/patternfly@^6.0.0-alpha.9":
+  version "6.0.0-alpha.10"
+  resolved "https://registry.npmjs.org/@patternfly/patternfly/-/patternfly-6.0.0-alpha.10.tgz#000908bbe91e5cbfb9eaa6443f736e04a81fa733"
+  integrity sha512-iZjLH4J0WYlgq9BUs7kQAJTQv0qfkr7+LRq39GEGOVvw7fmEZ6nhTaagXFgOSPziavNoGjg/iy4Nb6SPaPtPIA==
 
-"@patternfly/react-code-editor@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-code-editor/-/react-code-editor-5.0.0.tgz#2ba9d49a84023907b94fcbec13ec62b2d463d33e"
-  integrity sha512-Ya1nuw2Zcor/MET+s0+VuYq2VsRb+VzKpZQ8Y1MbrXJdlWV6QS5Wf1M7jDl9lYkiJaS3pjG7eXNeVX2YJ+mQiw==
+"@patternfly/react-code-editor@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.npmjs.org/@patternfly/react-code-editor/-/react-code-editor-6.0.0-alpha.1.tgz#523aebb729ac10bcd6daca291983e363ea428e36"
+  integrity sha512-LrAHUL3HExSGQ1/cr5phWOGNQypM05gXQWx2h/+skDe4yNh90+E1Gkuni6A1rhF7MZqugQV54lSszIYRz5gDGQ==
   dependencies:
-    "@patternfly/react-core" "^5.0.0"
-    "@patternfly/react-icons" "^5.0.0"
-    "@patternfly/react-styles" "^5.0.0"
+    "@patternfly/react-core" "^6.0.0-alpha.1"
+    "@patternfly/react-icons" "^6.0.0-alpha.1"
+    "@patternfly/react-styles" "^6.0.0-alpha.1"
     react-dropzone "14.2.3"
     tslib "^2.5.0"
 
-"@patternfly/react-core@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-5.0.0.tgz#96c9e2315047eec94d28f5621c02fa147182dd6f"
-  integrity sha512-kewRVFhLw0Dvt8250pqrO47sVRx8E93sMGZbHQomJnZdachYeQ9STnQTP2gvOBq/GPnMei0LZLv0T99g8mPE4w==
+"@patternfly/react-core@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.npmjs.org/@patternfly/react-core/-/react-core-6.0.0-alpha.1.tgz#f980c54db22cf42f6592754427a80ce6478a9b5a"
+  integrity sha512-ht8voYusmtMmAx96DY7NekhszWb8PqMl5Chw+sPBIItRqDbJDQRYXr2JamPhqyVfdmMJ61Jk6d85CumJ/C3wuw==
   dependencies:
-    "@patternfly/react-icons" "^5.0.0"
-    "@patternfly/react-styles" "^5.0.0"
-    "@patternfly/react-tokens" "^5.0.0"
-    focus-trap "7.4.3"
+    "@patternfly/react-icons" "^6.0.0-alpha.1"
+    "@patternfly/react-styles" "^6.0.0-alpha.1"
+    "@patternfly/react-tokens" "^6.0.0-alpha.1"
+    focus-trap "7.5.2"
     react-dropzone "^14.2.3"
     tslib "^2.5.0"
 
-"@patternfly/react-icons@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-5.0.0.tgz#bb56ead97425f1b3ab886ee291ba6b6af4088e9d"
-  integrity sha512-GG5Y/UYl0h346MyDU9U650Csaq4Mxk8S6U8XC7ERk/xIrRr2RF67O2uY7zKBDMTNLYdBvPzgc2s3OMV1+d2/mg==
+"@patternfly/react-icons@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.npmjs.org/@patternfly/react-icons/-/react-icons-6.0.0-alpha.1.tgz#2ba63c24e6217a126b8dd9f7f3f8b23dc720c8e9"
+  integrity sha512-G7ewsy+eQSZGsi5i5Wg3zhwdnFS1S7so5qgaAslbId9yZwiJFnNL6s1c6bOkKwzRhIT6gNRL9YL77iswn7us6g==
 
-"@patternfly/react-styles@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-styles/-/react-styles-5.0.0.tgz#63705ad498ff271fd056e92bd07b2c720ef3491a"
-  integrity sha512-xbSCgjx+fPrXbIzUznwTFWtJEbzVS0Wn4zrejdKJYQTY+4YcuPlFkeq2tl3syzwGsaYMpHiFwQiTaKyTvlwtuw==
+"@patternfly/react-styles@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.npmjs.org/@patternfly/react-styles/-/react-styles-6.0.0-alpha.1.tgz#37b93c184d5d024b38b709afd107adb103568546"
+  integrity sha512-P5a/LYZkU+GkezhzXQaxRlCzgLCfvJNVAMOYq3m0FD51j4AxwlCkYeqnDxA+YFRMk+DSb8Pp1fXslmwRrFT83Q==
 
-"@patternfly/react-table@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-table/-/react-table-5.0.0.tgz#2808f22d01818c31e6ddc69cc3a07c9381dc6d84"
-  integrity sha512-Q3MBo9+ZmBvLJzVHxmV9f/4qQAz5Si743zVLHRwjh+tjbn/DrcbxJdT8Uxa3NGKkpvszzgi/LPeXipJOHOELug==
+"@patternfly/react-table@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.npmjs.org/@patternfly/react-table/-/react-table-6.0.0-alpha.1.tgz#b8e407054c2ed3d628715ae368f896720f7d9254"
+  integrity sha512-0ThHk3wrLjDVSv4FZn4GhE+IDhnN92zhSZw/TM4Vsx67V3WrkBys5Iyg518BgohP19Z7D+Dp1V2F5ewJUEsRIQ==
   dependencies:
-    "@patternfly/react-core" "^5.0.0"
-    "@patternfly/react-icons" "^5.0.0"
-    "@patternfly/react-styles" "^5.0.0"
-    "@patternfly/react-tokens" "^5.0.0"
+    "@patternfly/react-core" "^6.0.0-alpha.1"
+    "@patternfly/react-icons" "^6.0.0-alpha.1"
+    "@patternfly/react-styles" "^6.0.0-alpha.1"
+    "@patternfly/react-tokens" "^6.0.0-alpha.1"
     lodash "^4.17.19"
     tslib "^2.5.0"
 
-"@patternfly/react-tokens@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-5.0.0.tgz#8e2698d32d5353359e713312687a6b08ead0080b"
-  integrity sha512-to2CXIZ6WTuzBcjLZ+nXi5LhnYkSIDu3RBMRZwrplmECOoUWv87CC+2T0EVxtASRtpQfikjD2PDKMsif5i0BxQ==
+"@patternfly/react-tokens@^6.0.0-alpha.1":
+  version "6.0.0-alpha.1"
+  resolved "https://registry.npmjs.org/@patternfly/react-tokens/-/react-tokens-6.0.0-alpha.1.tgz#20d67fd871dc3d4cbf26b9414c14d5eb15d5c6e7"
+  integrity sha512-b3P09skbUvKqgkmOvEwF31izWmkQ8+iUrJzQ6bt0L5D5OvUPMXcy+Ja3dOzaRG8+16S8lvN12h5Sh5RJLL6c1w==
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
@@ -5094,12 +5094,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-focus-trap@7.4.3:
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-7.4.3.tgz#a3dae73d44df359eb92bbf37b18e173e813b16c5"
-  integrity sha512-BgSSbK4GPnS2VbtZ50VtOv1Sti6DIkj3+LkVjiWMNjLeAp1SH1UlLx3ULu/DCu4vq5R4/uvTm+zrvsMsuYmGLg==
+focus-trap@7.5.2:
+  version "7.5.2"
+  resolved "https://registry.npmjs.org/focus-trap/-/focus-trap-7.5.2.tgz#e5ee678d10a18651f2591ffb66c949fb098d57cf"
+  integrity sha512-p6vGNNWLDGwJCiEjkSK6oERj/hEyI9ITsSwIUICBoKLlWiTWXJRfQibCwcoi50rTZdbi87qDtUlMCmQwsGSgPw==
   dependencies:
-    tabbable "^6.1.2"
+    tabbable "^6.2.0"
 
 follow-redirects@1.5.10:
   version "1.5.10"
@@ -9710,10 +9710,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-tabbable@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.1.2.tgz#b0d3ca81d582d48a80f71b267d1434b1469a3703"
-  integrity sha512-qCN98uP7i9z0fIS4amQ5zbGBOq+OSigYeGvPy7NDk8Y9yncqDZ9pRPgfsc2PJIVM9RrJj7GIfuRgmjoUU9zTHQ==
+tabbable@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.npmjs.org/tabbable/-/tabbable-6.2.0.tgz#732fb62bc0175cfcec257330be187dcfba1f3b97"
+  integrity sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==
 
 tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.1"
