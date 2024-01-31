@@ -1,5 +1,4 @@
 import React, { memo, useContext } from 'react';
-import ReactDOMServer from 'react-dom/server';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
@@ -51,16 +50,10 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
           composedString.push(str);
         } else {
           const splitString = str.split(regEx);
-          splitString.forEach((substr, newIndex) => {
+          splitString.forEach((substr) => {
             if (substr.match(regEx)) {
               matchCounter += 1;
-              composedString.push(
-                ReactDOMServer.renderToString(
-                  <span className={css(styles.logViewerString, handleHighlight(matchCounter))} key={newIndex}>
-                    {substr}
-                  </span>
-                )
-              );
+              composedString.push(`<span class="${css(styles.logViewerString, handleHighlight(matchCounter))}">${substr}</span>`);
             } else {
               composedString.push(escapeTextForHtml(substr));
             }
