@@ -667,13 +667,13 @@ export default class AnsiUp {
   }
 
   private transform_to_html(fragment: TextWithAttr): string {
-    const txt = fragment.text;
+    let txt = fragment.text;
 
     if (txt.length === 0) {
       return txt;
     }
 
-    // txt = this.escape_txt_for_html(txt);
+    txt = this.escape_txt_for_html(txt);
 
     // If colors not set, default style is used
     if (!fragment.bold && !fragment.italic && !fragment.underline && fragment.fg === null && fragment.bg === null) {

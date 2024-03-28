@@ -106,6 +106,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const parsedData = React.useMemo(() => parseConsoleOutput(data), [data]);
 
     const ansiUp = new AnsiUp();
+    // eslint-disable-next-line camelcase
+    ansiUp.escape_html = false;
 
     const ref = React.useRef<any>();
     const logViewerRef = innerRef || ref;
