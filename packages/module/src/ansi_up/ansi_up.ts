@@ -20,6 +20,7 @@ interface TextWithAttr {
   fg: AU_Color;
   bg: AU_Color;
   bold: boolean;
+  faint: boolean;
   italic: boolean;
   underline: boolean;
   text: string;
@@ -48,7 +49,7 @@ interface TextPacket {
 //
 
 export default class AnsiUp {
-  VERSION = '5.0.1';
+  VERSION = '6.0.2';
 
   //
   // *** SEE README ON GITHUB FOR PUBLIC API ***
@@ -62,6 +63,7 @@ export default class AnsiUp {
   private fg: AU_Color;
   private bg: AU_Color;
   private bold: boolean;
+  private faint: boolean;
   private italic: boolean;
   private underline: boolean;
   private _use_classes: boolean;
@@ -71,14 +73,22 @@ export default class AnsiUp {
   private _osc_st: RegExp;
   private _osc_regex: RegExp;
 
-  private _url_whitelist: any = {};
+  private _url_allowlist: Record<string, boolean | number> = {};
+  private _escape_html: boolean;
 
   private _buffer: string;
+
+  private _boldStyle: string;
+  private _faintStyle: string;
+  private _italicStyle: string;
+  private _underlineStyle: string;
 
   constructor() {
     // All construction occurs here
     this.setup_palettes();
     this.resetStyles();
+
+    this._use_classes = false;
   }
 
   set use_classes(arg: boolean) {
@@ -89,13 +99,32 @@ export default class AnsiUp {
     return this._use_classes;
   }
 
-  set url_whitelist(arg: {}) {
-    this._url_whitelist = arg;
+  set url_allowlist(arg: Record<string, boolean | number>) {
+    this._url_allowlist = arg;
   }
 
-  get url_whitelist(): {} {
-    return this._url_whitelist;
+  get url_allowlist(): Record<string, boolean | number> {
+    return this._url_allowlist;
   }
+
+  set escape_html(arg: boolean)
+  {
+      this._escape_html = arg;
+  }
+
+  get escape_html(): boolean
+  {
+      return this._escape_html;
+  }
+
+  set boldStyle(arg: string) { this._boldStyle = arg; }
+  get boldStyle(): string { return this._boldStyle; }
+  set faintStyle(arg: string) { this._faintStyle = arg; }
+  get faintStyle(): string { return this._faintStyle; }
+  set italicStyle(arg: string) { this._italicStyle = arg; }
+  get italicStyle(): string { return this._italicStyle; }
+  set underlineStyle(arg: string) { this._underlineStyle = arg; }
+  get underlineStyle(): string { return this._underlineStyle; }
 
   private setup_palettes(): void {
     this.ansi_colors = [
@@ -154,6 +183,10 @@ export default class AnsiUp {
   }
 
   private escape_txt_for_html(txt: string): string {
+    if (!this._escape_html) {
+      return txt;
+    }
+
     return txt.replace(/[&<>"']/gm, str => {
       if (str === '&') {
         return '&amp;';
@@ -209,7 +242,9 @@ export default class AnsiUp {
 
     // NOW WE HANDLE ESCAPES
     if (pos == 0) {
-      if (len == 1) {
+      // All of the sequences typically need at least 3 characters
+      // So, wait until we have at least that many
+      if (len < 3) {
         // Lone ESC in Buffer, We don't know yet
         pkt.kind = PacketKind.Incomplete;
         return pkt;
@@ -218,9 +253,8 @@ export default class AnsiUp {
       const next_char = this._buffer.charAt(1);
 
       // We treat this as a single ESC
-      // Which effecitvely shows
-      if (next_char != '[' && next_char != ']') {
-        // DeMorgan
+      // No transformation
+      if (next_char != '[' && next_char != ']' && (next_char != '(')) {
         pkt.kind = PacketKind.ESC;
         pkt.text = this._buffer.slice(0, 1);
         this._buffer = this._buffer.slice(1);
@@ -311,10 +345,8 @@ export default class AnsiUp {
         var rpos = match[0].length;
         this._buffer = this._buffer.slice(rpos);
         return pkt;
-      }
-
-      // OSC CHECK
-      if (next_char == ']') {
+      } else if (next_char == ']') {
+        // OSC CHECK
         if (len < 4) {
           pkt.kind = PacketKind.Incomplete;
           return pkt;
@@ -470,6 +502,15 @@ export default class AnsiUp {
         var rpos = match[0].length;
         this._buffer = this._buffer.slice(rpos);
         return pkt;
+      } else if (next_char == '(') {
+        // Other ESC CHECK
+        // This specifies the character set, which
+        // should just be ignored
+
+        // We have at least 3, so drop the sequence
+        pkt.kind = PacketKind.Unknown;
+        this._buffer = this._buffer.slice(3);
+        return pkt;
       }
     }
   }
@@ -504,21 +545,26 @@ export default class AnsiUp {
   }
 
   resetStyles() {
-    this._use_classes = false;
-
     this.bold = false;
+    this.faint = false;
     this.italic = false;
     this.underline = false;
     this.fg = this.bg = null;
 
     this._buffer = '';
 
-    this._url_whitelist = { http: 1, https: 1 };
+    this._url_allowlist = { http: 1, https: 1 };
+
+    this.boldStyle        = 'font-weight:bold';
+    this.faintStyle       = 'opacity:0.7';
+    this.italicStyle      = 'font-style:italic';
+    this.underlineStyle   = 'text-decoration:underline';
   }
 
   private with_state(pkt: TextPacket): TextWithAttr {
     return {
       bold: this.bold,
+      faint: this.faint,
       italic: this.italic,
       underline: this.underline,
       fg: this.fg,
@@ -540,18 +586,27 @@ export default class AnsiUp {
       const sgr_cmd_str = sgr_cmds.shift();
       const num = parseInt(sgr_cmd_str, 10);
 
+      // TODO
+      // AT SOME POINT, JUST CONVERT TO A LOOKUP TABLE
       if (isNaN(num) || num === 0) {
-        this.fg = this.bg = null;
+        this.fg = null;
+        this.bg = null;
         this.bold = false;
+        this.faint = false;
         this.italic = false;
         this.underline = false;
       } else if (num === 1) {
         this.bold = true;
+      } else if (num === 2) {
+        this.faint = true;
       } else if (num === 3) {
         this.italic = true;
       } else if (num === 4) {
         this.underline = true;
+      } else if (num === 21) {
+        this.bold = false;
       } else if (num === 22) {
+        this.faint = false;
         this.bold = false;
       } else if (num === 23) {
         this.italic = false;
@@ -612,13 +667,13 @@ export default class AnsiUp {
   }
 
   private transform_to_html(fragment: TextWithAttr): string {
-    const txt = fragment.text;
+    let txt = fragment.text;
 
     if (txt.length === 0) {
       return txt;
     }
 
-    // txt = this.escape_txt_for_html(txt);
+    txt = this.escape_txt_for_html(txt);
 
     // If colors not set, default style is used
     if (!fragment.bold && !fragment.italic && !fragment.underline && fragment.fg === null && fragment.bg === null) {
@@ -631,21 +686,26 @@ export default class AnsiUp {
     const fg = fragment.fg;
     const bg = fragment.bg;
 
-    // Note on bold: https://stackoverflow.com/questions/6737005/what-are-some-advantages-to-using-span-style-font-weightbold-rather-than-b?rq=1
-    if (fragment.bold) {
-      styles.push('font-weight:bold');
-    }
-
-    if (fragment.italic) {
-      styles.push('font-style:italic');
-    }
-
-    if (fragment.underline) {
-      styles.push('text-decoration:underline');
-    }
-
     if (!this._use_classes) {
       // USE INLINE STYLES
+
+      // Note on bold: https://stackoverflow.com/questions/6737005/what-are-some-advantages-to-using-span-style-font-weightbold-rather-than-b?rq=1
+      if (fragment.bold) {
+        styles.push(this._boldStyle);
+      }
+
+      if (fragment.faint) {
+        styles.push(this._faintStyle);
+      }
+
+      if (fragment.italic) {
+        styles.push(this._italicStyle);
+      }
+
+      if (fragment.underline) {
+        styles.push(this._underlineStyle);
+      }
+
       if (fg) {
         styles.push(`color:rgb(${fg.rgb.join(',')})`);
       }
@@ -654,6 +714,24 @@ export default class AnsiUp {
       }
     } else {
       // USE CLASSES
+
+      // Note on bold: https://stackoverflow.com/questions/6737005/what-are-some-advantages-to-using-span-style-font-weightbold-rather-than-b?rq=1
+      if (fragment.bold) {
+        classes.push("ansi-bold");
+      }
+
+      if (fragment.faint) {
+        classes.push("ansi-faint");
+      }
+
+      if (fragment.italic) {
+        classes.push("ansi-italic");
+      }
+
+      if (fragment.underline) {
+        classes.push("ansi-underline");
+      }
+
       if (fg) {
         if (fg.class_name !== 'truecolor') {
           classes.push(`${fg.class_name}-fg`);
@@ -691,7 +769,7 @@ export default class AnsiUp {
       return '';
     }
 
-    if (!this._url_whitelist[parts[0]]) {
+    if (!this._url_allowlist[parts[0]]) {
       return '';
     }
 
