@@ -57,6 +57,8 @@ interface LogViewerProps {
   }) => void;
   /** Forwarded ref */
   innerRef?: React.RefObject<any>;
+  /** Flag to enable or disable the use of classes (instead of inline styles) for ANSI coloring/formatting. */
+  useAnsiClasses?: boolean;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -89,6 +91,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     innerRef,
     isTextWrapped = true,
     initialIndexWidth,
+    useAnsiClasses,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -108,6 +111,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const ansiUp = new AnsiUp();
     // eslint-disable-next-line camelcase
     ansiUp.escape_html = false;
+    // eslint-disable-next-line camelcase
+    ansiUp.use_classes = useAnsiClasses;
 
     const ref = React.useRef<any>();
     const logViewerRef = innerRef || ref;

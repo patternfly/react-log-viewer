@@ -87,6 +87,8 @@ export default class AnsiUp {
     // All construction occurs here
     this.setup_palettes();
     this.resetStyles();
+
+    this._use_classes = false;
   }
 
   set use_classes(arg: boolean) {
@@ -543,8 +545,6 @@ export default class AnsiUp {
   }
 
   resetStyles() {
-    this._use_classes = false;
-
     this.bold = false;
     this.faint = false;
     this.italic = false;
