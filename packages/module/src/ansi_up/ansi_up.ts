@@ -686,25 +686,26 @@ export default class AnsiUp {
     const fg = fragment.fg;
     const bg = fragment.bg;
 
-    // Note on bold: https://stackoverflow.com/questions/6737005/what-are-some-advantages-to-using-span-style-font-weightbold-rather-than-b?rq=1
-    if (fragment.bold) {
-      styles.push(this._boldStyle);
-    }
-
-    if (fragment.faint) {
-      styles.push(this._faintStyle);
-    }
-
-    if (fragment.italic) {
-      styles.push(this._italicStyle);
-    }
-
-    if (fragment.underline) {
-      styles.push(this._underlineStyle);
-    }
-
     if (!this._use_classes) {
       // USE INLINE STYLES
+
+      // Note on bold: https://stackoverflow.com/questions/6737005/what-are-some-advantages-to-using-span-style-font-weightbold-rather-than-b?rq=1
+      if (fragment.bold) {
+        styles.push(this._boldStyle);
+      }
+
+      if (fragment.faint) {
+        styles.push(this._faintStyle);
+      }
+
+      if (fragment.italic) {
+        styles.push(this._italicStyle);
+      }
+
+      if (fragment.underline) {
+        styles.push(this._underlineStyle);
+      }
+
       if (fg) {
         styles.push(`color:rgb(${fg.rgb.join(',')})`);
       }
@@ -713,6 +714,24 @@ export default class AnsiUp {
       }
     } else {
       // USE CLASSES
+
+      // Note on bold: https://stackoverflow.com/questions/6737005/what-are-some-advantages-to-using-span-style-font-weightbold-rather-than-b?rq=1
+      if (fragment.bold) {
+        classes.push("ansi-bold");
+      }
+
+      if (fragment.faint) {
+        classes.push("ansi-faint");
+      }
+
+      if (fragment.italic) {
+        classes.push("ansi-italic");
+      }
+
+      if (fragment.underline) {
+        classes.push("ansi-underline");
+      }
+
       if (fg) {
         if (fg.class_name !== 'truecolor') {
           classes.push(`${fg.class_name}-fg`);
