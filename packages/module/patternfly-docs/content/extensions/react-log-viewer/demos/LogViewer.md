@@ -7,17 +7,18 @@ source: react-demos
 import { data } from '../examples/realTestData';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
-  Badge,
-  Button,
-  MenuToggle,
-  Select,
-  SelectOption,
-  Tooltip,
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  ToolbarItem,
-  ToolbarToggleGroup
+Badge,
+Button,
+MenuToggle,
+Select,
+SelectList,
+SelectOption,
+Tooltip,
+Toolbar,
+ToolbarContent,
+ToolbarGroup,
+ToolbarItem,
+ToolbarToggleGroup
 } from '@patternfly/react-core';
 import OutlinedPlayCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-play-circle-icon';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';

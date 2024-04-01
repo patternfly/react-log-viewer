@@ -8,6 +8,7 @@ const pageData = {
   "section": "extensions",
   "subsection": "",
   "deprecated": false,
+  "template": false,
   "beta": false,
   "demo": false,
   "newImplementationLink": false,
@@ -155,9 +156,7 @@ pageData.liveContext = {
   ToolbarItem,
   data
 };
-pageData.relativeImports = {
-  
-};
+pageData.relativeImports = "import { data } from 'content/extensions/react-log-viewer/examples/./realTestData';"
 pageData.examples = {
   'Basic': props => 
     <Example {...pageData} {...props} {...{"code":"import React from 'react';\nimport { data } from './realTestData';\nimport { LogViewer } from '@patternfly/react-log-viewer';\nimport { Checkbox } from '@patternfly/react-core';\n\nconst BasicLogViewer = () => {\n  const [isDarkTheme, setIsDarkTheme] = React.useState(false);\n\n  return (\n    <React.Fragment>\n      <Checkbox\n        label=\"Dark theme\"\n        isChecked={isDarkTheme}\n        onChange={(_event, value) => setIsDarkTheme(value)}\n        aria-label=\"toggle dark theme checkbox\"\n        id=\"toggle-dark-theme\"\n        name=\"toggle-dark-theme\"\n      />\n      <LogViewer hasLineNumbers={false} height={300} data={data.data} theme={isDarkTheme ? 'dark' : 'light'} />\n    </React.Fragment>\n  );\n};\n\nexport default BasicLogViewer;","title":"Basic","lang":"js"}}>
