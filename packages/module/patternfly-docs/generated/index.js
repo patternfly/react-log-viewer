@@ -1,14 +1,14 @@
 module.exports = {
-  '/extensions/log-viewer/react-demos': {
+  '/extensions/log-viewer/react': {
     id: "Log viewer",
     title: "Log viewer",
-    toc: [[{"text":"With complex toolbar"}]],
-    examples: ["With complex toolbar"],
+    toc: [{"text":"Examples"},[{"text":"Basic"},{"text":"With search"},{"text":"With complex toolbar"},{"text":"With header component"},{"text":"With footer component"},{"text":"With ANSI color logs"}]],
+    examples: ["Basic","With search","With complex toolbar","With header component","With footer component","With ANSI color logs"],
     section: "extensions",
     subsection: "",
-    source: "react-demos",
+    source: "react",
     tabName: null,
-    Component: () => import(/* webpackChunkName: "extensions/log-viewer/react-demos/index" */ './extensions/log-viewer/react-demos')
+    Component: () => import(/* webpackChunkName: "extensions/log-viewer/react/index" */ './extensions/log-viewer/react')
   },
   '/extensions/log-viewer/design-guidelines': {
     id: "Log viewer",
@@ -20,15 +20,15 @@ module.exports = {
     tabName: null,
     Component: () => import(/* webpackChunkName: "extensions/log-viewer/design-guidelines/index" */ './extensions/log-viewer/design-guidelines')
   },
-  '/extensions/log-viewer/react': {
+  '/extensions/log-viewer/react-demos': {
     id: "Log viewer",
     title: "Log viewer",
-    toc: [{"text":"Examples"},[{"text":"Basic"},{"text":"With search"},{"text":"With complex toolbar"},{"text":"With header component"},{"text":"With footer component"},{"text":"With ANSI color logs"}]],
-    examples: ["Basic","With search","With complex toolbar","With header component","With footer component","With ANSI color logs"],
+    toc: [[{"text":"With complex toolbar"}]],
+    examples: ["With complex toolbar"],
     section: "extensions",
     subsection: "",
-    source: "react",
+    source: "react-demos",
     tabName: null,
-    Component: () => import(/* webpackChunkName: "extensions/log-viewer/react/index" */ './extensions/log-viewer/react')
+    Component: () => import(/* webpackChunkName: "extensions/log-viewer/react-demos/index" */ './extensions/log-viewer/react-demos')
   }
 };

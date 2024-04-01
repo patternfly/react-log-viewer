@@ -201,7 +201,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       setIndexWidth(parseFloat(dummyIndexStyles.width));
       // remove dummy elements from the DOM tree
       containerRef.current.removeChild(dummyList);
-      setListKey(listKey => listKey + 1);
+      setListKey((listKey) => listKey + 1);
     };
 
     const scrollToRowInFocus = (searchedRowIndex: searchedKeyWordType) => {
@@ -211,14 +211,14 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       // if the keyword is out of the window when wrapping text
       if (!isTextWrapped) {
         setTimeout(() => {
-          const element = containerRef.current.querySelector('.pf-v5-c-log-viewer__string.pf-m-current');
+          const element = containerRef.current.querySelector('.pf-v6-c-log-viewer__string.pf-m-current');
           element && element.scrollIntoView({ block: 'nearest', inline: 'center' });
         }, 1);
       }
     };
 
     useEffect(() => {
-      setListKey(listKey => listKey + 1);
+      setListKey((listKey) => listKey + 1);
     }, [isTextWrapped]);
 
     const guessRowHeight = (rowIndex: number) => {
@@ -272,7 +272,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           )}
           {...(initialIndexWidth && {
             style: {
-              '--pf-v5-c-log-viewer--line-number-chars': initialIndexWidth + 1
+              '--pf-v6-c-log-viewer--line-number-chars': initialIndexWidth + 1
             } as React.CSSProperties
           })}
           {...props}

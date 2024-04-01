@@ -6,6 +6,7 @@ import {
   Button,
   MenuToggle,
   Select,
+  SelectList,
   SelectOption,
   Tooltip,
   Toolbar,
@@ -164,7 +165,7 @@ const ComplexToolbarLogViewer = () => {
   const leftAlignedToolbarGroup = (
     <React.Fragment>
       <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
-        <ToolbarItem variant="search-filter">
+        <ToolbarItem>
           <Select
             toggle={toggle}
             onOpenChange={(isOpen) => setSelectDataSourceOpen(isOpen)}
@@ -181,10 +182,10 @@ const ComplexToolbarLogViewer = () => {
             isOpen={selectDataSourceOpen}
             placeholderText={selectDataSourcePlaceholder}
           >
-            {selectDataSourceMenu}
+            <SelectList>{selectDataSourceMenu}</SelectList>
           </Select>
         </ToolbarItem>
-        <ToolbarItem variant="search-filter">
+        <ToolbarItem>
           <LogViewerSearch onFocus={(_e) => setIsPaused(true)} placeholder="Search" />
         </ToolbarItem>
       </ToolbarToggleGroup>
