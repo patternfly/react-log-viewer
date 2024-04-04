@@ -102,6 +102,11 @@ const pageData = {
           "description": "Toolbar rendered in the log viewer header"
         },
         {
+          "name": "useAnsiClasses",
+          "type": "boolean",
+          "description": "Flag to enable or disable the use of classes (instead of inline styles) for ANSI coloring/formatting."
+        },
+        {
           "name": "width",
           "type": "number | string",
           "description": "Width of the log viewer."
