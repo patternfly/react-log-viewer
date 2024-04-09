@@ -27,6 +27,11 @@ const pageData = {
           "description": "String or String Array data being sent by the consumer"
         },
         {
+          "name": "fastRowHeightEstimationLimit",
+          "type": "number",
+          "description": "The maximum char length for fast row height estimation.\nFor wrapped lines in Chrome based browsers, lines over this length will actually be rendered to the dom and\nmeasured to prevent a bug where one line can overlap another."
+        },
+        {
           "name": "footer",
           "type": "React.ReactNode",
           "description": "Component rendered in the log viewer console window footer"
@@ -100,6 +105,11 @@ const pageData = {
           "name": "toolbar",
           "type": "React.ReactNode",
           "description": "Toolbar rendered in the log viewer header"
+        },
+        {
+          "name": "useAnsiClasses",
+          "type": "boolean",
+          "description": "Flag to enable or disable the use of classes (instead of inline styles) for ANSI coloring/formatting."
         },
         {
           "name": "width",

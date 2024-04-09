@@ -9,8 +9,9 @@
   ],
   "scripts": {
     "build": "yarn workspace @patternfly/react-log-viewer build",
+    "build:watch": "npm run build:watch -w @patternfly/react-log-viewer",
     "build:docs": "yarn workspace @patternfly/react-log-viewer docs:build",
-    "start": "yarn build && concurrently --kill-others \"yarn workspace @patternfly/react-log-viewer docs:develop\"",
+    "start": "concurrently --kill-others \"npm run build:watch\" \"npm run docs:develop -w @patternfly/react-log-viewer\"",
     "serve:docs": "yarn workspace @patternfly/react-log-viewer docs:serve",
     "clean": "yarn workspace @patternfly/react-log-viewer clean",
     "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint packages --ext js,jsx,ts,tsx --cache",
