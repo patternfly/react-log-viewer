@@ -59,6 +59,11 @@ interface LogViewerProps {
   innerRef?: React.RefObject<any>;
   /** Flag to enable or disable the use of classes (instead of inline styles) for ANSI coloring/formatting. */
   useAnsiClasses?: boolean;
+  /** The maximum char length for fast row height estimation.
+   * For wrapped lines in Chrome based browsers, lines over this length will actually be rendered to the dom and
+   * measured to prevent a bug where one line can overlap another.
+   */
+  fastRowHeightEstimationLimit?: number;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -92,6 +97,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     isTextWrapped = true,
     initialIndexWidth,
     useAnsiClasses,
+    fastRowHeightEstimationLimit = 5000,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -107,6 +113,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     /* Parse data every time it changes */
     const parsedData = React.useMemo(() => parseConsoleOutput(data), [data]);
+
+    const isChrome = React.useMemo(() => navigator.userAgent.indexOf('Chrome') !== -1, []);
 
     const ansiUp = new AnsiUp();
     // eslint-disable-next-line camelcase
@@ -228,6 +236,26 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       setListKey(listKey => listKey + 1);
     }, [isTextWrapped]);
 
+    const computeRowHeight = (rowText: string, estimatedHeight: number) => {
+      const logViewerList = containerRef.current.firstChild.firstChild;
+
+      // early return with the estimated height if the log viewer list hasn't been rendered yet,
+      // this will be called again once it has been rendered and the correct height will be set
+      if (!logViewerList) {
+        return estimatedHeight;
+      }
+
+      const dummyText = document.createElement('span');
+      dummyText.className = css(styles.logViewerText);
+      dummyText.innerHTML = rowText;
+
+      logViewerList.appendChild(dummyText);
+      const computedHeight = dummyText.clientHeight
+      logViewerList.removeChild(dummyText);
+
+      return computedHeight
+    }
+
     const guessRowHeight = (rowIndex: number) => {
       if (!isTextWrapped) {
         return lineHeight;
@@ -237,7 +265,16 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       // get the row numbers of the current text
       const numRows = Math.ceil(rowText.length / charNumsPerLine);
       // multiply by line height to get the total height
-      return lineHeight * (numRows || 1);
+      const heightGuess = lineHeight * (numRows || 1);
+
+      // because of a bug in react-window (which seems to be limited to chrome) we need to 
+      // actually compute row height in long lines to prevent them from overflowing. 
+      // related issue https://github.com/bvaughn/react-window/issues/593
+      if (rowText.length > fastRowHeightEstimationLimit && isChrome && isTextWrapped) {
+        return computeRowHeight(rowText, heightGuess);
+      }
+
+      return heightGuess
     };
 
     const createList = (parsedData: string[]) => (
