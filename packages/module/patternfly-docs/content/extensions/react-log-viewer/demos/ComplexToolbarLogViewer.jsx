@@ -146,12 +146,12 @@ const ComplexToolbarLogViewer = () => {
 
   const ControlButton = () => (
     <Button
-      variant={isPaused ? 'plain' : 'link'}
+      variant="link"
       onClick={() => {
         setIsPaused(!isPaused);
       }}
+      icon={isPaused ? <PlayIcon /> : <PauseIcon />}
     >
-      {isPaused ? <PlayIcon /> : <PauseIcon />}
       {isPaused ? ` Resume Log` : ` Pause Log`}
     </Button>
   );
