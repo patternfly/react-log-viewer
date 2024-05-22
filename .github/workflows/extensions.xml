@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: actions/add-to-project@v0.3.0
         with:
-          project-url: https://github.com/orgs/patternfly/projects/12
+          project-url: https://github.com/orgs/patternfly/projects/7
           github-token: ${{ secrets.GH_PROJECTS }}
