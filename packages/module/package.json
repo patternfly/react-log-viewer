@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/patternfly/react-log-viewer#readme",
   "dependencies": {
-    "@patternfly/react-core": "^6.0.0-alpha.60",
-    "@patternfly/react-icons": "^6.0.0-alpha.22",
-    "@patternfly/react-styles": "^6.0.0-alpha.22",
+    "@patternfly/react-core": "^6.0.0-alpha.61",
+    "@patternfly/react-icons": "^6.0.0-alpha.23",
+    "@patternfly/react-styles": "^6.0.0-alpha.23",
     "memoize-one": "^5.1.0"
   },
   "peerDependencies": {
@@ -39,11 +39,11 @@
     "react-dom": "^17 || ^18"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "^6.0.0-alpha.36",
+    "@patternfly/documentation-framework": "^6.0.0-alpha.41",
     "@patternfly/patternfly": "6.0.0-alpha.139",
-    "@patternfly/react-table": "^6.0.0-alpha.60",
+    "@patternfly/react-table": "^6.0.0-alpha.61",
     "@patternfly/patternfly-a11y": "^4.3.1",
-    "@patternfly/react-code-editor": "6.0.0-alpha.60",
+    "@patternfly/react-code-editor": "6.0.0-alpha.61",
     "resize-observer-polyfill": "^1.5.1",
     "tslib": "^2.0.0",
     "react-monaco-editor": "^0.51.0",
