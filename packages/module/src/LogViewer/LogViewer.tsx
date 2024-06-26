@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { parseConsoleOutput, searchedKeyWordType, stripAnsi } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
-import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
+import styles from './css/log-viewer';
 import AnsiUp from '../ansi_up/ansi_up';
 
 interface LogViewerProps {
@@ -312,7 +312,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
             hasLineNumbers && styles.modifiers.lineNumbers,
             !isTextWrapped && styles.modifiers.nowrap,
             initialIndexWidth && styles.modifiers.lineNumberChars,
-            theme === 'dark' && styles.modifiers.dark
+            theme === 'dark' && styles.themeDark
           )}
           {...(initialIndexWidth && {
             style: {

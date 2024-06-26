@@ -9,7 +9,7 @@
     "tag": "alpha"
   },
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "yarn generate && yarn build:esm && yarn build:cjs",
     "build:watch": "npm run build:esm -- --watch",
     "build:esm": "tsc --build --verbose ./tsconfig.json",
     "build:cjs": "tsc --build --verbose ./tsconfig.cjs.json",
@@ -18,6 +18,7 @@
     "docs:build": "pf-docs-framework build all --output public",
     "docs:serve": "pf-docs-framework serve public --port 5001",
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
+    "generate": "yarn clean && node scripts/writeClassMaps.js",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
     "serve:a11y": "yarn serve coverage"
   },
@@ -47,6 +48,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "tslib": "^2.0.0",
     "react-monaco-editor": "^0.51.0",
-    "monaco-editor": "^0.34.1"
+    "monaco-editor": "^0.34.1",
+    "camel-case": "^3.0.0"
   }
 }

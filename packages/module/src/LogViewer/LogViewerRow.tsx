@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
+import styles from './css/log-viewer';
 import { LogViewerContext } from './LogViewerContext';
 import AnsiUp from '../ansi_up/ansi_up';
 import { escapeString, escapeTextForHtml, isAnsi, searchedKeyWordType, splitAnsi } from './utils/utils';
