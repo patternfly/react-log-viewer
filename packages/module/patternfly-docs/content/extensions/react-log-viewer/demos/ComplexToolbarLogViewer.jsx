@@ -74,7 +74,7 @@ const ComplexToolbarLogViewer = () => {
     }
   }, [isPaused, buffer]);
 
-  //Listening escape key on full screen mode.
+  // Listening escape key on full screen mode.
   React.useEffect(() => {
     const handleFullscreenChange = () => {
       const isFullscreen =
