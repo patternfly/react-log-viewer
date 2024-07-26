@@ -1,5 +1,5 @@
 const { join, basename, relative, dirname } = require('path');
-const { outputFileSync, copyFileSync, ensureDirSync, symlinkSync } = require('fs-extra');
+const { outputFileSync, copyFileSync, ensureDirSync } = require('fs-extra');
 const { generateClassMaps } = require('./generateClassMaps');
 
 const writeTsExport = (file, classMap, outDir) =>
@@ -22,21 +22,21 @@ function writeClassMaps(classMaps) {
     // write the export map in TS and put it in src, from here TS will compile it to the different module types at build time
     writeTsExport(relativeFilePath, classMap, packageBase);
 
-    // copy the css file itself over to dist since TS won't do that
+    // copy the css file itself over to dist so that they can be easily imported since TS won't do that
     const cssFileName = basename(file);
     const distDir = join(packageBase, 'dist');
     const cssDistDir = join(distDir, 'css');
     ensureDirSync(cssDistDir);
     copyFileSync(file, join(cssDistDir, cssFileName));
 
-    // create symlinks for each exported module that reference to the single copy of the css files, prevents needing duplicates of the stylesheets
+    // create css files for each exported module to reference since TS won't do that either
     const fileDir = dirname(relativeFilePath).replace('src/', '');
     const cssDistEsmDir = join(distDir, 'esm', fileDir);
     const cssDistCjsDir = join(distDir, 'js', fileDir);
     const cssDistDirs = [cssDistEsmDir, cssDistCjsDir];
     cssDistDirs.forEach((dir) => {
       ensureDirSync(dir);
-      symlinkSync(join(cssDistDir, cssFileName), join(dir, cssFileName));
+      copyFileSync(file, join(dir, cssFileName));
     });
   });
 
