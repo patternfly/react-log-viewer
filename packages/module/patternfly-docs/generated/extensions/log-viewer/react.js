@@ -186,7 +186,7 @@ pageData.examples = {
 
 const Component = () => (
   <React.Fragment>
-    <AutoLinkHeader {...{"id":"examples","size":"h2","className":"ws-title ws-h2"}}>
+    <AutoLinkHeader {...{"id":"examples","headingLevel":"h2","className":"ws-title ws-h2"}}>
       {`Examples`}
     </AutoLinkHeader>
     {React.createElement(pageData.examples["Basic"])}

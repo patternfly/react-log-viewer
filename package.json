@@ -22,9 +22,15 @@
     "serve:a11y": "yarn workspace @patternfly/react-log-viewer serve:a11y"
   },
   "devDependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "typescript": "^4.7.4",
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "14.4.3",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/dom": "9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "@types/react": "^18",
@@ -43,18 +49,13 @@
     "prettier": "2.7.1",
     "jest": "^29.2.2",
     "babel-jest": "^29.2.2",
-    "@babel/core": "^7.19.6",
-    "@babel/preset-env": "^7.19.4",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-flow": "^7.18.6",
-    "@babel/preset-typescript": "^7.18.6",
-    "@testing-library/react":"^13.4.0",
-    "@testing-library/user-event": "14.4.3",
-    "@testing-library/jest-dom":"5.16.5",
-    "@testing-library/dom": "9.0.0",
     "jest-environment-jsdom": "^29.2.2",
     "jest-canvas-mock": "^2.4.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "rimraf": "^2.6.2",
     "serve": "^14.1.2",
-    "rimraf": "^2.6.2"
-  }
+    "typescript": "^4.7.4"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
