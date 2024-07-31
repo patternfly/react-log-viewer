@@ -7,7 +7,7 @@ import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from './css/log-viewer';
 import AnsiUp from '../ansi_up/ansi_up';
 
-interface LogViewerProps {
+export interface LogViewerProps {
   /** String or String Array data being sent by the consumer*/
   data?: string | string[];
   /** Consumer may turn off the visibility on the toolbar */

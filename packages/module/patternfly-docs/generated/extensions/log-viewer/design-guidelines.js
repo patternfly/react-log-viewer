@@ -33,7 +33,7 @@ const Component = () => (
       </strong>
       {` is a preconfigured component that gives you the option to visualize your log content. Log viewer renders log output in real time in a clear and structured way.`}
     </p>
-    <AutoLinkHeader {...{"id":"light-theme-log-viewer","size":"h2","className":"ws-title ws-h2"}}>
+    <AutoLinkHeader {...{"id":"light-theme-log-viewer","headingLevel":"h2","className":"ws-title ws-h2"}}>
       {`Light theme log viewer`}
     </AutoLinkHeader>
     <img src={srcImport0} width={srcImport0.width} height={srcImport0.height} {...{"alt":"Log Viewer","className":"ws-img "}}>
@@ -88,7 +88,7 @@ const Component = () => (
         {` Expand log viewer to full screen.`}
       </li>
     </ol>
-    <AutoLinkHeader {...{"id":"dark-theme-log-viewer","size":"h2","className":"ws-title ws-h2"}}>
+    <AutoLinkHeader {...{"id":"dark-theme-log-viewer","headingLevel":"h2","className":"ws-title ws-h2"}}>
       {`Dark theme log viewer`}
     </AutoLinkHeader>
     <p {...{"className":"pf-v6-c-content--p ws-p "}}>
@@ -97,7 +97,7 @@ available. All log viewer functionality remains the same whether a light or dark
     </p>
     <img src={srcImport1} width={srcImport1.width} height={srcImport1.height} {...{"alt":"Dark theme log viewer","className":"ws-img "}}>
     </img>
-    <AutoLinkHeader {...{"id":"usability","size":"h2","className":"ws-title ws-h2"}}>
+    <AutoLinkHeader {...{"id":"usability","headingLevel":"h2","className":"ws-title ws-h2"}}>
       {`Usability`}
     </AutoLinkHeader>
     <p {...{"className":"pf-v6-c-content--p ws-p "}}>
@@ -117,10 +117,10 @@ available. All log viewer functionality remains the same whether a light or dark
         {`The user shares files frequently with other users or teams.`}
       </li>
     </ul>
-    <AutoLinkHeader {...{"id":"log-viewer-functionality","size":"h2","className":"ws-title ws-h2"}}>
+    <AutoLinkHeader {...{"id":"log-viewer-functionality","headingLevel":"h2","className":"ws-title ws-h2"}}>
       {`Log viewer functionality`}
     </AutoLinkHeader>
-    <AutoLinkHeader {...{"id":"with-popover","size":"h3","className":"ws-title ws-h3"}}>
+    <AutoLinkHeader {...{"id":"with-popover","headingLevel":"h3","className":"ws-title ws-h3"}}>
       {`With popover`}
     </AutoLinkHeader>
     <p {...{"className":"pf-v6-c-content--p ws-p "}}>
@@ -128,7 +128,7 @@ available. All log viewer functionality remains the same whether a light or dark
     </p>
     <img src={srcImport2} width={srcImport2.width} height={srcImport2.height} {...{"alt":"Clear this log popover open on a Log viewer","className":"ws-img "}}>
     </img>
-    <AutoLinkHeader {...{"id":"with-dropdown-drilldown-and-search-expanded","size":"h3","className":"ws-title ws-h3"}}>
+    <AutoLinkHeader {...{"id":"with-dropdown-drilldown-and-search-expanded","headingLevel":"h3","className":"ws-title ws-h3"}}>
       {`With dropdown, drilldown, and search expanded`}
     </AutoLinkHeader>
     <p {...{"className":"pf-v6-c-content--p ws-p "}}>
@@ -136,7 +136,7 @@ available. All log viewer functionality remains the same whether a light or dark
     </p>
     <img src={srcImport3} width={srcImport3.width} height={srcImport3.height} {...{"alt":"Cog options open on a Log viewer","className":"ws-img "}}>
     </img>
-    <AutoLinkHeader {...{"id":"with-search-results","size":"h3","className":"ws-title ws-h3"}}>
+    <AutoLinkHeader {...{"id":"with-search-results","headingLevel":"h3","className":"ws-title ws-h3"}}>
       {`With search results`}
     </AutoLinkHeader>
     <p {...{"className":"pf-v6-c-content--p ws-p "}}>
