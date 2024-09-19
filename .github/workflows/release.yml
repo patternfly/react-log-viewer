@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - v4
+      - v5
 jobs:
   call-build-lint-test-workflow:
     uses: ./.github/workflows/build-lint-test.yml
