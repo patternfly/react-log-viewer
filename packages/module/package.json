@@ -1,12 +1,12 @@
 {
   "name": "@patternfly/react-log-viewer",
-  "version": "6.0.0-alpha.0",
+  "version": "6.0.0-prerelease.0",
   "description": "Terminal renderer",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "prerelease"
   },
   "scripts": {
     "build": "yarn generate && yarn build:esm && yarn build:cjs",
