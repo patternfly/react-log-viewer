@@ -1,5 +1,4 @@
-name: Add new issues to PatternFly Extensions project
-
+name: Process new issues
 on:
   issues:
     types:
