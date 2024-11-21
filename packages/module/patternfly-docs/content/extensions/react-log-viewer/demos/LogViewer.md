@@ -4,7 +4,7 @@ section: extensions
 source: react-demos
 ---
 
-import { data } from '../examples/realTestData';
+import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
 Badge,

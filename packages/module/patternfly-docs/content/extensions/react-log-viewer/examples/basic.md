@@ -16,7 +16,7 @@ propComponents: [LogViewer, LogViewerSearch]
 
 import { LogViewer, LogViewerSearch, LogViewerContext } from '@patternfly/react-log-viewer';
 import { Button, Checkbox, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
-import { data } from './realTestData';
+import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 
 ## Examples
 
