@@ -1,9 +1,9 @@
 import React from 'react';
-import { data } from './realTestData';
+import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 import { Checkbox } from '@patternfly/react-core';
 
-const BasicLogViewer = () => {
+export const BasicLogViewer = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
   return (
@@ -20,5 +20,3 @@ const BasicLogViewer = () => {
     </React.Fragment>
   );
 };
-
-export default BasicLogViewer;

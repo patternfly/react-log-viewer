@@ -1,5 +1,5 @@
 import React from 'react';
-import { data } from '../examples/realTestData';
+import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
   Badge,
@@ -22,7 +22,7 @@ import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 
-const ComplexToolbarLogViewer = () => {
+export const ComplexToolbarLogViewer = () => {
   const dataSources = {
     'container-1': { type: 'C', id: 'data1' },
     'container-2': { type: 'D', id: 'data2' },
@@ -273,5 +273,3 @@ const ComplexToolbarLogViewer = () => {
     />
   );
 };
-
-export default ComplexToolbarLogViewer;

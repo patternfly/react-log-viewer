@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { data } from './realTestData';
+import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';
 
-const CustomControlLogViewer = () => {
+export const CustomControlLogViewer = () => {
   const [isTextWrapped, setIsTextWrapped] = React.useState(false);
   const onActionClick = () => {
     console.log('clicked test action button');
@@ -43,5 +43,3 @@ const CustomControlLogViewer = () => {
     />
   );
 };
-
-export default CustomControlLogViewer;

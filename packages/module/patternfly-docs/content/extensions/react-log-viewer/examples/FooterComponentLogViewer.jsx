@@ -1,9 +1,9 @@
 import React from 'react';
-import { data } from './realTestData';
+import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 import { Button } from '@patternfly/react-core';
 
-const FooterComponentLogViewer = () => {
+export const FooterComponentLogViewer = () => {
   const logViewerRef = React.useRef();
   const FooterButton = () => {
     const handleClick = () => {
@@ -23,5 +23,3 @@ const FooterComponentLogViewer = () => {
     />
   );
 };
-
-export default FooterComponentLogViewer;
