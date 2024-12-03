@@ -312,7 +312,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
             hasLineNumbers && styles.modifiers.lineNumbers,
             !isTextWrapped && styles.modifiers.nowrap,
             initialIndexWidth && styles.modifiers.lineNumberChars,
-            theme === 'dark' && styles.themeDark
+            theme === 'dark' && styles.modifiers.dark
           )}
           {...(initialIndexWidth && {
             style: {
