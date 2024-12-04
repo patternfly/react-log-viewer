@@ -54,16 +54,13 @@
   max-height: var(--pf-v6-c-log-viewer--MaxHeight);
 }
 
-.pf-v6-c-log-viewer.pf-m-dark {
+html:not(.pf-v6-theme-dark) .pf-v6-c-log-viewer.pf-m-dark { 
   --pf-v6-c-log-viewer__main--BorderWidth: var(--pf-v6-c-log-viewer--m-dark__main--BorderWidth);
+  --pf-v6-c-log-viewer__main--BackgroundColor: var(--pf-v6-c-log-viewer--m-dark__main--BackgroundColor); 
+  --pf-v6-c-log-viewer__text--Color: var(--pf-v6-c-log-viewer--m-dark__text--Color); 
+  --pf-v6-c-log-viewer__index--Color: var( --pf-v6-c-log-viewer--m-dark__index--Color); 
 }
-html:not(.pf-v6-theme-dark) .pf-v6-c-log-viewer.pf-m-dark .pf-v6-c-log-viewer__main {
-  --pf-v6-c-log-viewer__main--BackgroundColor: var(--pf-v6-c-log-viewer--m-dark__main--BackgroundColor);
-  --pf-v6-c-log-viewer__main--BorderColor: var(--pf-t--global--border--color--default);
-  --pf-v6-c-log-viewer__text--Color: var(--pf-v6-c-log-viewer--m-dark__text--Color);
-  --pf-v6-c-log-viewer__index--Color: var( --pf-v6-c-log-viewer--m-dark__index--Color);
-  --pf-v6-c-log-viewer--m-line-numbers__list--before--BackgroundColor: var(--pf-t--global--border--color--default);
-}
+
 .pf-v6-c-log-viewer.pf-m-wrap-text {
   word-break: break-all;
 }
