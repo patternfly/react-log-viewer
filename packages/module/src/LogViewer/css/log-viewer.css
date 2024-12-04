@@ -45,21 +45,22 @@
   --pf-v6-c-log-viewer--c-toolbar__group--m-toggle-group--spacer: 0;
   --pf-v6-c-log-viewer--c-toolbar__group--m-toggle-group--m-show--spacer: var(--pf-t--global--spacer--sm);
   --pf-v6-c-log-viewer--m-dark__main--BorderWidth: 0;
+  --pf-v6-c-log-viewer--m-dark__main--BackgroundColor: var(--pf-t--global--background--color--inverse--default);
+  --pf-v6-c-log-viewer--m-dark__text--Color: var(--pf-t--global--text--color--inverse);
+  --pf-v6-c-log-viewer--m-dark__index--Color: var(--pf-t--global--text--color--inverse);
   display: flex;
   flex-direction: column;
   height: var(--pf-v6-c-log-viewer--Height);
   max-height: var(--pf-v6-c-log-viewer--MaxHeight);
 }
-.pf-v6-c-log-viewer.pf-v6-theme-dark {
+
+html:not(.pf-v6-theme-dark) .pf-v6-c-log-viewer.pf-m-dark { 
   --pf-v6-c-log-viewer__main--BorderWidth: var(--pf-v6-c-log-viewer--m-dark__main--BorderWidth);
+  --pf-v6-c-log-viewer__main--BackgroundColor: var(--pf-v6-c-log-viewer--m-dark__main--BackgroundColor); 
+  --pf-v6-c-log-viewer__text--Color: var(--pf-v6-c-log-viewer--m-dark__text--Color); 
+  --pf-v6-c-log-viewer__index--Color: var( --pf-v6-c-log-viewer--m-dark__index--Color); 
 }
-.pf-v6-c-log-viewer.pf-v6-theme-dark .pf-v6-c-log-viewer__main {
-  --pf-v6-c-log-viewer__main--BackgroundColor: var(--pf-t--global--background--color--primary--default);
-  --pf-v6-c-log-viewer__main--BorderColor: var(--pf-t--global--border--color--default);
-  --pf-v6-c-log-viewer__text--Color: var(--pf-t--global--text--color--regular);
-  --pf-v6-c-log-viewer__index--Color: var(--pf-t--global--text--color--subtle);
-  --pf-v6-c-log-viewer--m-line-numbers__list--before--BackgroundColor: var(--pf-t--global--border--color--default);
-}
+
 .pf-v6-c-log-viewer.pf-m-wrap-text {
   word-break: break-all;
 }

@@ -11,6 +11,7 @@ export default {
   "logViewerText": "pf-v6-c-log-viewer__text",
   "logViewerTimestamp": "pf-v6-c-log-viewer__timestamp",
   "modifiers": {
+    "dark": "pf-m-dark",
     "wrapText": "pf-m-wrap-text",
     "nowrap": "pf-m-nowrap",
     "lineNumbers": "pf-m-line-numbers",
