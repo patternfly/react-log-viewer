@@ -4,6 +4,12 @@
   "version": "0.0.0",
   "description": "This library provides patternfly extensions",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "log",
+    "viewer",
+    "logviewer",
+  ],
   "workspaces": [
     "packages/*"
   ],
