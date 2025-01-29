@@ -23,7 +23,7 @@ export const CustomControlLogViewer = () => {
           <ToolbarContent>
             <ToolbarItem>
               <Button onClick={onActionClick} variant="control">
-                Test Action
+                Test action
               </Button>
             </ToolbarItem>
             <ToolbarItem>

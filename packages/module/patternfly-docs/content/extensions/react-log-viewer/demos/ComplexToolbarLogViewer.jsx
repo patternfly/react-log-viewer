@@ -177,7 +177,7 @@ export const ComplexToolbarLogViewer = () => {
       }}
       icon={isPaused ? <PlayIcon /> : <PauseIcon />}
     >
-      {isPaused ? ` Resume Log` : ` Pause Log`}
+      {isPaused ? ` Resume log` : ` Pause log`}
     </Button>
   );
 
