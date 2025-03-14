@@ -52,7 +52,7 @@ jobs:
           fi
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
@@ -89,7 +89,7 @@ jobs:
           fi
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
@@ -130,7 +130,7 @@ jobs:
           fi
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
