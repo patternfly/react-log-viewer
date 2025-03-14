@@ -14,7 +14,7 @@ jobs:
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
           fi
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: setup-cache
         name: Cache setup
         with:
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
         with:
@@ -43,7 +43,7 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: dist
         name: Cache dist
         with:
