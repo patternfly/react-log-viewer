@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
         with:
@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: dist
         name: Cache dist
         with:
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
         with:
@@ -63,7 +63,7 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: lint-cache
         name: Load lint cache
         with:
@@ -90,7 +90,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
         with:
@@ -101,7 +101,7 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: dist
         name: Cache dist
         with:
@@ -131,7 +131,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
         with:
@@ -142,7 +142,7 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: dist
         name: Cache dist
         with:
