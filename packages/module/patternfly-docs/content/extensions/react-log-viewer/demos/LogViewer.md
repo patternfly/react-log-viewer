@@ -4,6 +4,7 @@ section: extensions
 source: react-demos
 ---
 
+import { useState, useRef, useEffect, Fragment } from 'react';
 import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
@@ -30,4 +31,5 @@ import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 ### With complex toolbar
 
 ```js file='./ComplexToolbarLogViewer.jsx'
+
 ```

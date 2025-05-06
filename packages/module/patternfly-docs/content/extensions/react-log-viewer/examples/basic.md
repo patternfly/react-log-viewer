@@ -14,6 +14,7 @@ sourceLink: https://github.com/patternfly/react-log-viewer/blob/main/packages/mo
 propComponents: [LogViewer, LogViewerSearch]
 ---
 
+import { useState, Fragment, useRef } from 'react';
 import { LogViewer, LogViewerSearch, LogViewerContext } from '@patternfly/react-log-viewer';
 import { Button, Checkbox, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
 import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
@@ -23,29 +24,35 @@ import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/exten
 ### Basic
 
 ```js file='./BasicLogViewer.jsx'
+
 ```
 
 ### With search
 
 ```js file='./BasicSearchLogViewer.jsx'
+
 ```
 
 ### With complex toolbar
 
 ```js file='./CustomControlLogViewer.jsx'
+
 ```
 
 ### With header component
 
 ```js file='./HeaderComponentLogViewer.jsx'
+
 ```
 
 ### With footer component
 
 ```js file='./FooterComponentLogViewer.jsx'
+
 ```
 
 ### With ANSI color logs
 
 ```js file='./ANSIColorLogViewer.jsx'
+
 ```

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import { useState, useEffect, memo, useMemo, useRef, forwardRef } from 'react';
 import { LogViewerContext, LogViewerToolbarContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
@@ -112,9 +112,9 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [listKey, setListKey] = useState(1);
 
     /* Parse data every time it changes */
-    const parsedData = React.useMemo(() => parseConsoleOutput(data), [data]);
+    const parsedData = useMemo(() => parseConsoleOutput(data), [data]);
 
-    const isChrome = React.useMemo(() => navigator.userAgent.indexOf('Chrome') !== -1, []);
+    const isChrome = useMemo(() => navigator.userAgent.indexOf('Chrome') !== -1, []);
 
     const ansiUp = new AnsiUp();
     // eslint-disable-next-line camelcase
@@ -122,9 +122,9 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     // eslint-disable-next-line camelcase
     ansiUp.use_classes = useAnsiClasses;
 
-    const ref = React.useRef<any>();
+    const ref = useRef<any>(null);
     const logViewerRef = innerRef || ref;
-    const containerRef = React.useRef<any>();
+    const containerRef = useRef<any>(null);
     let resizeTimer = null as any;
 
     useEffect(() => {
@@ -154,7 +154,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       setLoading(resizing);
     }, [resizing]);
 
-    const dataToRender = React.useMemo(
+    const dataToRender = useMemo(
       () => ({
         parsedData,
         logViewerRef,
@@ -250,11 +250,11 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       dummyText.innerHTML = rowText;
 
       logViewerList.appendChild(dummyText);
-      const computedHeight = dummyText.clientHeight
+      const computedHeight = dummyText.clientHeight;
       logViewerList.removeChild(dummyText);
 
-      return computedHeight
-    }
+      return computedHeight;
+    };
 
     const guessRowHeight = (rowIndex: number) => {
       if (!isTextWrapped) {
@@ -267,14 +267,14 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       // multiply by line height to get the total height
       const heightGuess = lineHeight * (numRows || 1);
 
-      // because of a bug in react-window (which seems to be limited to chrome) we need to 
-      // actually compute row height in long lines to prevent them from overflowing. 
+      // because of a bug in react-window (which seems to be limited to chrome) we need to
+      // actually compute row height in long lines to prevent them from overflowing.
       // related issue https://github.com/bvaughn/react-window/issues/593
       if (rowText.length > fastRowHeightEstimationLimit && isChrome && isTextWrapped) {
         return computeRowHeight(rowText, heightGuess);
       }
 
-      return heightGuess
+      return heightGuess;
     };
 
     const createList = (parsedData: string[]) => (
@@ -351,7 +351,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
   areEqual
 );
 
-export const LogViewer = React.forwardRef((props: LogViewerProps, ref: React.Ref<any>) => (
+export const LogViewer = forwardRef((props: LogViewerProps, ref: React.Ref<any>) => (
   <LogViewerBase innerRef={ref as React.MutableRefObject<any>} {...props} />
 ));
 
