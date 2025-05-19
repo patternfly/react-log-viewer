@@ -1,13 +1,13 @@
-import React from 'react';
+import { useState, Fragment } from 'react';
 import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 import { Checkbox } from '@patternfly/react-core';
 
 export const BasicLogViewer = () => {
-  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Checkbox
         label="Dark theme"
         isChecked={isDarkTheme}
@@ -17,6 +17,6 @@ export const BasicLogViewer = () => {
         name="toggle-dark-theme"
       />
       <LogViewer hasLineNumbers={false} height={300} data={data.data} theme={isDarkTheme ? 'dark' : 'light'} />
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import { memo, useContext } from 'react';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
 import styles from './css/log-viewer';
@@ -27,7 +27,7 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
 
   /** Helper function for applying the correct styling for styling rows containing searched keywords */
   const handleHighlight = (matchCounter: number) => {
-    const searchedWordResult = searchedWordIndexes.filter(searchedWord => searchedWord.rowIndex === index);
+    const searchedWordResult = searchedWordIndexes.filter((searchedWord) => searchedWord.rowIndex === index);
     if (searchedWordResult.length !== 0) {
       if (rowInFocus.rowIndex === index && rowInFocus.matchIndex === matchCounter) {
         return styles.modifiers.current;
@@ -44,7 +44,7 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
       const splitAnsiString = splitAnsi(rowText);
       const regEx = new RegExp(`(${escapeString(context.searchedInput)})`, 'ig');
       const composedString: string[] = [];
-      splitAnsiString.forEach(str => {
+      splitAnsiString.forEach((str) => {
         matchCounter = 0;
         if (isAnsi(str)) {
           composedString.push(str);
@@ -53,7 +53,9 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
           splitString.forEach((substr) => {
             if (substr.match(regEx)) {
               matchCounter += 1;
-              composedString.push(`<span class="${css(styles.logViewerString, handleHighlight(matchCounter))}">${substr}</span>`);
+              composedString.push(
+                `<span class="${css(styles.logViewerString, handleHighlight(matchCounter))}">${substr}</span>`
+              );
             } else {
               composedString.push(escapeTextForHtml(substr));
             }

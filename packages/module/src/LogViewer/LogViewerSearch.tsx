@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
   NUMBER_INDEX_DELTA,
   DEFAULT_FOCUS,
@@ -108,15 +108,15 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
         props.onChange && props.onChange(event, input);
         setSearchedInput(input);
       }}
-      onNextClick={event => {
+      onNextClick={(event) => {
         props.onNextClick && props.onNextClick(event);
         handleNextSearchItem();
       }}
-      onPreviousClick={event => {
+      onPreviousClick={(event) => {
         props.onPreviousClick && props.onPreviousClick(event);
         handlePrevSearchItem();
       }}
-      onClear={event => {
+      onClear={(event) => {
         props.onClear && props.onClear(event);
         handleClear();
       }}

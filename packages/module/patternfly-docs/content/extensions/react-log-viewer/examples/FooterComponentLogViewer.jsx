@@ -1,10 +1,10 @@
-import React from 'react';
+import { useRef } from 'react';
 import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer } from '@patternfly/react-log-viewer';
 import { Button } from '@patternfly/react-core';
 
 export const FooterComponentLogViewer = () => {
-  const logViewerRef = React.useRef();
+  const logViewerRef = useRef(null);
   const FooterButton = () => {
     const handleClick = () => {
       logViewerRef.current.scrollToBottom();

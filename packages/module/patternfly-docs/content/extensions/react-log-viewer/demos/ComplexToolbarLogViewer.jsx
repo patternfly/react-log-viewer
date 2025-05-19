@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useRef, useEffect, Fragment } from 'react';
 import { data } from '@patternfly/react-log-viewer/patternfly-docs/content/extensions/react-log-viewer/examples/realTestData.js';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
@@ -28,20 +28,20 @@ export const ComplexToolbarLogViewer = () => {
     'container-2': { type: 'D', id: 'data2' },
     'container-3': { type: 'E', id: 'data3' }
   };
-  const [isPaused, setIsPaused] = React.useState(false);
-  const [isFullScreen, setIsFullScreen] = React.useState(false);
-  const [itemCount, setItemCount] = React.useState(1);
-  const [currentItemCount, setCurrentItemCount] = React.useState(0);
-  const [renderData, setRenderData] = React.useState('');
-  const [selectedDataSource, setSelectedDataSource] = React.useState('container-1');
-  const [selectDataSourceOpen, setSelectDataSourceOpen] = React.useState(false);
-  const [timer, setTimer] = React.useState(null);
-  const [selectedData, setSelectedData] = React.useState(data[dataSources[selectedDataSource].id].split('\n'));
-  const [buffer, setBuffer] = React.useState([]);
-  const [linesBehind, setLinesBehind] = React.useState(0);
-  const logViewerRef = React.useRef();
+  const [isPaused, setIsPaused] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [itemCount, setItemCount] = useState(1);
+  const [currentItemCount, setCurrentItemCount] = useState(0);
+  const [renderData, setRenderData] = useState('');
+  const [selectedDataSource, setSelectedDataSource] = useState('container-1');
+  const [selectDataSourceOpen, setSelectDataSourceOpen] = useState(false);
+  const [timer, setTimer] = useState(null);
+  const [selectedData, setSelectedData] = useState(data[dataSources[selectedDataSource].id].split('\n'));
+  const [buffer, setBuffer] = useState([]);
+  const [linesBehind, setLinesBehind] = useState(0);
+  const logViewerRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimer(
       window.setInterval(() => {
         setItemCount((itemCount) => itemCount + 1);
@@ -52,7 +52,7 @@ export const ComplexToolbarLogViewer = () => {
     };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (itemCount > selectedData.length) {
       window.clearInterval(timer);
     } else {
@@ -60,7 +60,7 @@ export const ComplexToolbarLogViewer = () => {
     }
   }, [itemCount]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isPaused && buffer.length > 0) {
       setCurrentItemCount(buffer.length);
       setRenderData(buffer.join('\n'));
@@ -75,7 +75,7 @@ export const ComplexToolbarLogViewer = () => {
   }, [isPaused, buffer]);
 
   // Listening escape key on full screen mode.
-  React.useEffect(() => {
+  useEffect(() => {
     const handleFullscreenChange = () => {
       const isFullscreen =
         document.fullscreenElement ||
@@ -99,7 +99,7 @@ export const ComplexToolbarLogViewer = () => {
     };
   }, []);
 
-  const onExpandClick = _event => {
+  const onExpandClick = (_event) => {
     const element = document.querySelector('#complex-toolbar-demo');
 
     if (!isFullScreen) {
@@ -163,10 +163,10 @@ export const ComplexToolbarLogViewer = () => {
   ));
 
   const selectDataSourcePlaceholder = (
-    <React.Fragment>
+    <Fragment>
       <Badge>{dataSources[selectedDataSource].type}</Badge>
       {` ${selectedDataSource}`}
-    </React.Fragment>
+    </Fragment>
   );
 
   const ControlButton = () => (
@@ -188,7 +188,7 @@ export const ComplexToolbarLogViewer = () => {
   );
 
   const leftAlignedToolbarGroup = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarToggleGroup toggleIcon={<EllipsisVIcon />} breakpoint="md">
         <ToolbarItem>
           <Select
@@ -217,11 +217,11 @@ export const ComplexToolbarLogViewer = () => {
       <ToolbarItem>
         <ControlButton />
       </ToolbarItem>
-    </React.Fragment>
+    </Fragment>
   );
 
   const rightAlignedToolbarGroup = (
-    <React.Fragment>
+    <Fragment>
       <ToolbarGroup variant="icon-button-group">
         <ToolbarItem>
           <Tooltip position="top" content={<div>Download</div>}>
@@ -238,7 +238,7 @@ export const ComplexToolbarLogViewer = () => {
           </Tooltip>
         </ToolbarItem>
       </ToolbarGroup>
-    </React.Fragment>
+    </Fragment>
   );
 
   const FooterButton = () => {
