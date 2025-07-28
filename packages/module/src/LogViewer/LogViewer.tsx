@@ -64,6 +64,8 @@ export interface LogViewerProps {
    * measured to prevent a bug where one line can overlap another.
    */
   fastRowHeightEstimationLimit?: number;
+  /** Number of spaces used to replace tabs */
+  numSpaces?: number;
 }
 
 let canvas: HTMLCanvasElement | undefined;
@@ -98,6 +100,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     initialIndexWidth,
     useAnsiClasses,
     fastRowHeightEstimationLimit = 5000,
+    numSpaces = 8,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -112,7 +115,13 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [listKey, setListKey] = useState(1);
 
     /* Parse data every time it changes */
-    const parsedData = useMemo(() => parseConsoleOutput(data), [data]);
+    const parsedData = useMemo(
+      () =>
+        // use of tabs in data can throw off the character count when we estimate height since we see it as \t, so replace them with spaces
+        // spaces seem to get picked up by height calculations
+        parseConsoleOutput(data).map((datum) => datum.replace(/\t/g, ' '.repeat(numSpaces))),
+      [data]
+    );
 
     const isChrome = useMemo(() => navigator.userAgent.indexOf('Chrome') !== -1, []);
 
@@ -183,6 +192,10 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     }, [parsedData, scrollToRow]);
 
     const createDummyElements = () => {
+      if (!containerRef.current) {
+        return;
+      }
+
       // create dummy elements
       const dummyIndex = document.createElement('span');
       dummyIndex.className = css(styles.logViewerIndex);
