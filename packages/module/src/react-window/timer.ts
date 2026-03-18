@@ -13,7 +13,7 @@ export function cancelTimeout(timeoutID: TimeoutID) {
   cancelAnimationFrame(timeoutID.id);
 }
 
-export function requestTimeout(callback: Function, delay: number): TimeoutID {
+export function requestTimeout(callback: () => void, delay: number): TimeoutID {
   const start = now();
 
   function tick() {
