@@ -355,7 +355,7 @@ export default function createListComponent({
     // So that pure component sCU will prevent re-renders.
     // We maintain this cache, and pass a style prop rather than index,
     // So that List can clear cached styles and force item re-render if necessary.
-    _getItemStyle = (index: number): Object => {
+    _getItemStyle = (index: number): object => {
       const { itemSize } = this.props;
 
       const itemStyleCache = this._getItemStyleCache(shouldResetStyleCacheOnItemSizeChange && itemSize);
@@ -378,7 +378,7 @@ export default function createListComponent({
       return style;
     };
 
-    _getItemStyleCache = memoizeOne(() => ({})) as (itemSize?: any) => { [key: number]: Object };
+    _getItemStyleCache = memoizeOne(() => ({})) as (itemSize?: any) => { [key: number]: object };
 
     _getRangeToRender(): [number, number, number, number] {
       const { itemCount, overscanCount } = this.props;

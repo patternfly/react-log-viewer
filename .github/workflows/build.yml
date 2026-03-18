@@ -7,9 +7,9 @@ jobs:
     env:
       GH_PR_NUM: ${{ github.event.number }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: |
-          if [[ ! -z "${GH_PR_NUM}" ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
@@ -25,14 +25,15 @@ jobs:
             packages/*/package.json
             packages/*/patternfly-docs/content/**
             packages/*/patternfly-docs/generated/**
-          key: ${{ runner.os }}-setup-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
+          key: ${{ runner.os }}-setup-22-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package.json', 'packages/module/package.json') }}
       - name: Run build script
         run: ./devSetup.sh
         shell: bash
         if: steps.setup-cache.outputs.cache-hit != 'true'
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version-file: '.nvmrc'
+      - run: corepack enable
       - uses: actions/cache@v4
         id: yarn-cache
         name: Cache npm deps
@@ -40,8 +41,8 @@ jobs:
           path: |
            node_modules
            **/node_modules
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
-      - run: yarn install --frozen-lockfile
+          key: ${{ runner.os }}-yarn-22-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+      - run: yarn install --immutable
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v4
         id: dist
@@ -49,7 +50,7 @@ jobs:
         with:
           path: |
             packages/*/dist
-          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-22-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build
         if: steps.dist.outputs.cache-hit != 'true'
