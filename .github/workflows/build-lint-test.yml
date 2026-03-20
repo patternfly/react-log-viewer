@@ -146,6 +146,8 @@ jobs:
           key: ${{ runner.os }}-yarn-22-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --immutable
         if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - name: Install Chrome for Puppeteer
+        run: npx puppeteer browsers install chrome
       - uses: actions/cache@v4
         id: dist
         name: Cache dist
