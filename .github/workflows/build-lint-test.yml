@@ -147,7 +147,7 @@ jobs:
       - run: yarn install --immutable
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - name: Install Chrome for Puppeteer
-        run: npx @puppeteer/browsers@latest install chrome@stable
+        run: npx puppeteer browsers install chrome
       - uses: actions/cache@v4
         id: dist
         name: Cache dist
