@@ -1,11 +1,15 @@
 name: build-lint-test
 on:
   workflow_call:
+    inputs:
+      pr-number:
+        required: false
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GH_PR_NUM: ${{ github.event.number }}
+      GH_PR_NUM: ${{ inputs.pr-number }}
     steps:
       - uses: actions/checkout@v4
       - run: |
@@ -41,7 +45,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     env:
-      GH_PR_NUM: ${{ github.event.number }}
+      GH_PR_NUM: ${{ inputs.pr-number }}
     needs: build
     steps:
       - uses: actions/checkout@v4
@@ -78,7 +82,7 @@ jobs:
   test_jest:
     runs-on: ubuntu-latest
     env:
-      GH_PR_NUM: ${{ github.event.number }}
+      GH_PR_NUM: ${{ inputs.pr-number }}
     needs: build
     steps:
       - uses: actions/checkout@v4
@@ -120,7 +124,7 @@ jobs:
   test_a11y:
     runs-on: ubuntu-latest
     env:
-      GH_PR_NUM: ${{ github.event.number }}
+      GH_PR_NUM: ${{ inputs.pr-number }}
     needs: build
     steps:
       - uses: actions/checkout@v4

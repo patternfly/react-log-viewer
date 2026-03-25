@@ -6,3 +6,6 @@ on:
 jobs:
   call-build-lint-test-workflow:
     uses: ./.github/workflows/build-lint-test.yml
+    secrets: inherit
+    with:
+      pr-number: ${{ github.event.number }}
