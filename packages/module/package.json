@@ -47,6 +47,7 @@
     "@patternfly/react-table": "^6.0.0",
     "camel-case": "^3.0.0",
     "monaco-editor": "^0.34.1",
+    "puppeteer": "^24.15.0",
     "react-monaco-editor": "^0.51.0",
     "resize-observer-polyfill": "^1.5.1",
     "tslib": "^2.0.0"
