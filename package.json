@@ -8,7 +8,7 @@
     "react",
     "log",
     "viewer",
-    "logviewer",
+    "logviewer"
   ],
   "workspaces": [
     "packages/*"
