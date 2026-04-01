@@ -2,5 +2,6 @@
 module.exports = {
   sideNavItems: [{ section: 'extensions' }],
   topNavItems: [],
-  port: 8006
+  port: 8006,
+  hasThemeSwitcher: true
 };
