@@ -213,10 +213,10 @@ export const ComplexToolbarLogViewer = () => {
         <ToolbarItem>
           <LogViewerSearch onFocus={(_e) => setIsPaused(true)} placeholder="Search" />
         </ToolbarItem>
+        <ToolbarItem>
+          <ControlButton />
+        </ToolbarItem>
       </ToolbarToggleGroup>
-      <ToolbarItem>
-        <ControlButton />
-      </ToolbarItem>
     </Fragment>
   );
 
