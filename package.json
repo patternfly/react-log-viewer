@@ -65,6 +65,9 @@
     },
     "puppeteer": {
       "built": true
+    },
+    "sharp": {
+      "built": true
     }
   },
   "packageManager": "yarn@4.18.1"

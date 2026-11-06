@@ -4051,6 +4051,8 @@ __metadata:
       built: true
     puppeteer:
       built: true
+    sharp:
+      built: true
   languageName: unknown
   linkType: soft
 
